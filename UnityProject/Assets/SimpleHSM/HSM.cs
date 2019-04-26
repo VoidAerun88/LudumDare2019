@@ -39,7 +39,7 @@ namespace Nox.SimpleHSM
 
         public abstract Transition EvaluateTransition();
 
-        public abstract void PerformStateAction(float timeDelta);
+        public abstract void Update(float timeDelta);
 
         public abstract Transition GetTransition<T>(TransitionType transitionType) where T : State, new();
     }
@@ -66,7 +66,7 @@ namespace Nox.SimpleHSM
             return SimpleHSM.Transition.None();
         }
 
-        public override void PerformStateAction(float timeDelta)
+        public override void Update(float timeDelta)
         {
 
         }
@@ -100,7 +100,7 @@ namespace Nox.SimpleHSM
 
             foreach (var state in _stateStack)
             {
-                state.PerformStateAction(deltaTime);
+                state.Update(deltaTime);
             }
 
             foreach (var state in _stateStack)
