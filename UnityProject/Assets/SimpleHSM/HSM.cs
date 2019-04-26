@@ -32,7 +32,6 @@ namespace Nox.SimpleHSM
         public object _owner;
         public object _context;
 
-
         public abstract void OnEnter();
 
         public abstract void OnExit();
