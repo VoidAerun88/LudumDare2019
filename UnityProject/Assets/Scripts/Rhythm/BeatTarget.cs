@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
-using TMPro;
 
 public class BeatTarget : MonoBehaviour
 {
@@ -28,6 +27,7 @@ public class BeatTarget : MonoBehaviour
     private float _duration = -1f;
     public float Precision = 0.2f;
     public bool IsValid => _state == State.Valid;
+    public int FollowerValue;
     
     private void Update()
     {
@@ -85,10 +85,8 @@ public class BeatTarget : MonoBehaviour
         var timeLeft = _duration - (Time.time - _startDate);
         if(timeLeft > 0 && timeLeft <= Precision)
         {
-            Debug.LogError("ValidBeatAction");
             _state = State.Valid;
         } else {
-            Debug.Log("InValidBeatAction");
             _state = State.Invalid;
         }
         

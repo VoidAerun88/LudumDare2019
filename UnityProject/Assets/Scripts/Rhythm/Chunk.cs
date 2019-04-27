@@ -24,9 +24,6 @@ public class Chunk : MonoBehaviour
     public void Init(string templateId, float beatDuration)
     {
         Key = templateId;
-
-        
-
         StartSequece(beatDuration);
     }
 
@@ -45,7 +42,7 @@ public class Chunk : MonoBehaviour
     {
         if(target.IsValid)
         {
-            Debug.Log($"Chunk : target is valid");
+            FollowersManager.Instance.Followers = target.FollowerValue;
             _validCount++;
         }
     }
