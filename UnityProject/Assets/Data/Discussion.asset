@@ -12,18 +12,154 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da3ff07714365b043896a014f38fff10, type: 3}
   m_Name: Discussion
   m_EditorClassIdentifier: 
+  TotalTime: 262
   DialogList:
-  - TimeCondition: 2
-    MessageColor: {r: 1, g: 1, b: 1, a: 1}
+  - TimeCondition: 15
+    LockoutTime: 2
     Sender: Mom
     SenderMessage: Hey you! It's been a while, how are you doing, darling?
     CorrectResponse: Hi Mom! yeah, my network is growing! I hope to get even more
       followers!
     WrongResponses: []
-  - TimeCondition: 3
-    MessageColor: {r: 1, g: 1, b: 1, a: 1}
+  - TimeCondition: 15
+    LockoutTime: 2
     Sender: Mom
-    SenderMessage: Hey you! It's been a while, how are you doing, darling?
-    CorrectResponse: Hi Mom! yeah, my network is growing! I hope to get even more
-      followers!
+    SenderMessage: 'I don''t really understand it, but I''m proud of you! I wanted
+      to ask: your sister asked for a family dinner tonight, would you make the time
+      to come too?'
+    CorrectResponse: After what Miss Silly said about my job last time, I'm not too
+      sure...
+    WrongResponses: []
+  - TimeCondition: 15
+    LockoutTime: 15
+    Sender: Mom
+    SenderMessage: Your sister passed her exam yesterday, it's Lieutenant Silly now!
+      Haha! Be nice to her when she calls you, okay?
+    CorrectResponse: Really? Wow! I'll make an effort, I promise!
+    WrongResponses: []
+  - TimeCondition: 15
+    LockoutTime: 10
+    Sender: Sis
+    SenderMessage: Hey beautiful! Thanks for passing by yesterday! Will we see you
+      next week-end?
+    CorrectResponse: Maybe! Congrats again on the new Job!
+    WrongResponses: []
+  - TimeCondition: 100
+    LockoutTime: 2
+    Sender: Mom
+    SenderMessage: I heard about your friend that was attacked, are you okay?
+    CorrectResponse: I'm in shock, who could have done something like this?
+    WrongResponses: []
+  - TimeCondition: 100
+    LockoutTime: 2
+    Sender: Mom
+    SenderMessage: I know! And you told me her boyfriend saw someone at her place
+      too?
+    CorrectResponse: Yeah, someone was stalking her.
+    WrongResponses: []
+  - TimeCondition: 120
+    LockoutTime: 2
+    Sender: Sis
+    SenderMessage: Hey... Mom told me you knew the victim, how are you holding up?
+    CorrectResponse: Okay I guess...
+    WrongResponses: []
+  - TimeCondition: 120
+    LockoutTime: 2
+    Sender: Sis
+    SenderMessage: I've been assigned to the case, I swear I'll do my best to find
+      the guy who did it. It will not go unpunished.
+    CorrectResponse: Thanks Sis, it means a lot.
+    WrongResponses: []
+  - TimeCondition: 180
+    LockoutTime: 2
+    Sender: Sis
+    SenderMessage: 'I think you should hear it from me: There''s been another victim.'
+    CorrectResponse: What? Who?
+    WrongResponses: []
+  - TimeCondition: 180
+    LockoutTime: 2
+    Sender: Sis
+    SenderMessage: A guy from the influencer business, can't disclose him name yet.
+    CorrectResponse: Oh no... do I know him?
+    WrongResponses: []
+  - TimeCondition: 180
+    LockoutTime: 2
+    Sender: Sis
+    SenderMessage: I'm not sure, but sorry, I have to talk about official business
+      now, do you have any idea who might be after influencers?
+    CorrectResponse: How would I know?!?
+    WrongResponses: []
+  - TimeCondition: 180
+    LockoutTime: 2
+    Sender: Sis
+    SenderMessage: Is there vehement protesters? Rumors about ennemies?
+    CorrectResponse: Not that I know of... It would help to know who it was...
+    WrongResponses: []
+  - TimeCondition: 180
+    LockoutTime: 2
+    Sender: Sis
+    SenderMessage: If you think about anything, talk to me okay? Even if you think
+      it's nothing.
+    CorrectResponse: I will! Sorry to be that useless...
+    WrongResponses: []
+  - TimeCondition: 180
+    LockoutTime: 2
+    Sender: Sis
+    SenderMessage: It's okay, I didn't expect much... I'll get back to you when I
+      can tell you more.
+    CorrectResponse: K, thanks.
+    WrongResponses: []
+  - TimeCondition: 200
+    LockoutTime: 2
+    Sender: Sis
+    SenderMessage: The name of the second victim is public, it's Super Steevy...
+    CorrectResponse: I saw it in the news. I met him in a gala last month...
+    WrongResponses: []
+  - TimeCondition: 200
+    LockoutTime: 2
+    Sender: Sis
+    SenderMessage: Really? Was it the one for the Earth Day?
+    CorrectResponse: Yes, how do you know?
+    WrongResponses: []
+  - TimeCondition: 200
+    LockoutTime: 2
+    Sender: Sis
+    SenderMessage: The first victim was there too, it's a lead! Thanks a lot!
+    CorrectResponse: Happy to help! Go get'em tiger!
+    WrongResponses: []
+  - TimeCondition: 250
+    LockoutTime: 2
+    Sender: Sis
+    SenderMessage: Where are you? I'd like to talk to you, face-to-face.
+    CorrectResponse: It's late, I'm at home, why? What's going on?
+    WrongResponses: []
+  - TimeCondition: 250
+    LockoutTime: 2
+    Sender: Sis
+    SenderMessage: I'll tell you when I get there, I'm on my way now.
+    CorrectResponse: I think I heard something outside... is that you?
+    WrongResponses: []
+  - TimeCondition: 250
+    LockoutTime: 2
+    Sender: Sis
+    SenderMessage: No, I'm still a few minutes out, LOCK YOUR DOORS.
+    CorrectResponse: You're scaring me... WHAT IS HAPPENING?
+    WrongResponses: []
+  - TimeCondition: 250
+    LockoutTime: 2
+    Sender: Sis
+    SenderMessage: I believe you might be the killer's next target.
+    CorrectResponse: What make you thSOMEONE'S TRYING TO FORCE MY DOOR!
+    WrongResponses: []
+  - TimeCondition: 250
+    LockoutTime: 2
+    Sender: Sis
+    SenderMessage: Go hide! I called my precinct, they're on the way!
+    CorrectResponse: k hurry
+    WrongResponses: []
+  - TimeCondition: 250
+    LockoutTime: 2
+    Sender: Sis
+    SenderMessage: We got him, you can come out now, everything is okay.
+    CorrectResponse: END
     WrongResponses: []

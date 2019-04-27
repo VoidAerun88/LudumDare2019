@@ -1,6 +1,6 @@
 Mom:Hey you! It's been a while, how are you doing, darling?
 Me:Hi Mom! yeah, my network is growing! I hope to get even more followers!
-Mom:I don't really understand it, but I'm proud of you! I wanted to ask: your sister asked for a family dinner next thursday, would you make the time to come too?
+Mom:I don't really understand it, but I'm proud of you! I wanted to ask: your sister asked for a family dinner tonight, would you make the time to come too?
 Me:After what Miss Silly said about my job last time, I'm not too sure...
 Mom:Your sister passed her exam yesterday, it's Lieutenant Silly now! Haha! Be nice to her when she calls you, okay?
 Me:Really? Wow! I'll make an effort, I promise!
@@ -8,21 +8,46 @@ Me:Really? Wow! I'll make an effort, I promise!
 Sis:Hey beautiful! Thanks for passing by yesterday! Will we see you next week-end?
 Me:Maybe! Congrats again on the new Job!
 
+100 - 
 Mom:I heard about your friend that was attacked, are you okay?
 Me:I'm in shock, who could have done something like this?
 Mom:I know! And you told me her boyfriend saw someone at her place too?
 Me:Yeah, someone was stalking her.
+Sis:Hey... Mom told me you knew the victim, how are you holding up?
+Me:Okay I guess...
+Sis:I've been assigned to the case, I swear I'll do my best to find the guy who did it. It will not go unpunished.
+Me:Thanks Sis, it means a lot.
 
-Sis:Hey, this is official business, do you have any idea who could be after your friends?
+180 -
+Sis:I think you should hear it from me: There's been another victim.
+Me:What? Who?
+Sis:A guy from the influencer business, can't disclose him name yet.
+Me:Oh no... do I know him?
+Sis:I'm not sure, but sorry, I have to talk about official business now, do you have any idea who might be after influencers?
+Me:How would I know?!?
+Sis:Is there vehement protesters? Rumors about ennemies?
+Me:Not that I know of... It would help to know who it was...
+Sis:If you think about anything, talk to me okay? Even if you think it's nothing.
+Me:I will! Sorry to be that useless...
+Sis:It's okay, I didn't expect much... I'll get back to you when I can tell you more.
+Me:K, thanks.
+
+200-
+Sis:The name of the second victim is public, it's Super Steevy...
+Me:I saw it in the news. I met him in a gala last month...
+Sis:Really? Was it the one for the Earth Day?
+Me:Yes, how do you know?
+Sis:The first victim was there too, it's a lead! Thanks a lot!
+Me:Happy to help! Go get'em tiger!
 
 
-
+250-
 Sis:Where are you? I'd like to talk to you, face-to-face.
 Me:It's late, I'm at home, why? What's going on?
-Sis:I'll tell tou when I get there, I'm on my way now.
+Sis:I'll tell you when I get there, I'm on my way now.
 // GravelNoise
 Me:I think I heard something outside... is that you?
-Sis:No, I'm still a few minutes out, LOCK YOUR DOOORS.
+Sis:No, I'm still a few minutes out, LOCK YOUR DOORS.
 Me:You're scaring me... WHAT IS HAPPENING?
 Sis:I believe you might be the killer's next target.
 // Thomping

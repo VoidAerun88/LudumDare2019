@@ -7,12 +7,13 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Create Text Sequence")]
 public class TextSequence : ScriptableObject
 {
+    public float TotalTime;
+
     [Serializable]
     public class Dialog
     {
         public float TimeCondition;
         public float LockoutTime;
-        public Color MessageColor = Color.white;
         public string Sender;
         public string SenderMessage;
         public string CorrectResponse;
@@ -25,5 +26,15 @@ public class TextSequence : ScriptableObject
     private void SortByTime()
     {
         DialogList.Sort((x, y) => { return (x.TimeCondition.CompareTo(y.TimeCondition)); });
+    }
+
+    [ContextMenu("RefreshTotalTime")]
+    public void RefreshTotalTime()
+    {
+        TotalTime = 0;
+        foreach (var dialog in DialogList)
+        {
+            TotalTime = Mathf.Max(dialog.TimeCondition, TotalTime) + dialog.LockoutTime;
+        }
     }
 }
