@@ -25,6 +25,8 @@ public class MessageHub : MonoBehaviour
     public TextSequence WrongTextSequence;
 
     public MessageBox MessageBox;
+    public float IgnoredTimeDelay = 5f;
+    public float WrongTimeDelay = 3f;
 
     [ReadOnly]
     public int _ignoreLevel;
@@ -84,15 +86,15 @@ public class MessageHub : MonoBehaviour
         {
             case ResponseStatus.Correct:
                 _ignoreLevel = 0;
-                _lockoutTime += PhoneTime.Time + dialog.LockoutTime;
+                _lockoutTime = PhoneTime.Time + dialog.LockoutTime;
                 break;
             case ResponseStatus.Ignored:
                 _ignoreLevel++;
-                _lockoutTime += PhoneTime.Time + 5f;
+                _lockoutTime = PhoneTime.Time + IgnoredTimeDelay;
                 break;
             case ResponseStatus.Incorrect:
                 _ignoreLevel = 0;
-                _lockoutTime += PhoneTime.Time + dialog.LockoutTime;
+                _lockoutTime = PhoneTime.Time + WrongTimeDelay;
                 break;
         }
 
@@ -105,15 +107,15 @@ public class MessageHub : MonoBehaviour
         {
             case ResponseStatus.Correct:
                 _ignoreDialogIdx++;
-                _lockoutTime += PhoneTime.Time + 5f;
+                _lockoutTime = PhoneTime.Time + 5f;
                 break;
             case ResponseStatus.Ignored:
                 _ignoreLevel++;
-                _lockoutTime += PhoneTime.Time + 5f;
+                _lockoutTime = PhoneTime.Time + 5f;
                 break;
             case ResponseStatus.Incorrect:
                 // go to incorrect
-                _lockoutTime += PhoneTime.Time + dialog.LockoutTime;
+                _lockoutTime = PhoneTime.Time + dialog.LockoutTime;
                 break;
         }
         
@@ -126,14 +128,14 @@ public class MessageHub : MonoBehaviour
         {
             case ResponseStatus.Correct:
                 _ignoreLevel = 0;
-                _lockoutTime += PhoneTime.Time + 5f;
+                _lockoutTime = PhoneTime.Time + 5f;
                 break;
             case ResponseStatus.Ignored:
-                _lockoutTime += PhoneTime.Time + 5f;
+                _lockoutTime = PhoneTime.Time + 5f;
                 break;
             case ResponseStatus.Incorrect:
                 // go to incorrect
-                _lockoutTime += PhoneTime.Time + dialog.LockoutTime;
+                _lockoutTime = PhoneTime.Time + dialog.LockoutTime;
                 break;
         }
 
