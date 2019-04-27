@@ -1,0 +1,293 @@
+fileFormatVersion: 2
+guid: 3a15afef82593c2f3bc65cd97be90ec1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2918066472641003004
+    second: Color_SocialMedia_Pictures02_0
+  - first:
+      213: 4549952849371540819
+    second: Color_SocialMedia_Pictures02_1
+  - first:
+      213: 8773731010742417435
+    second: Color_SocialMedia_Pictures02_2
+  - first:
+      213: 2292901190828791575
+    second: Color_SocialMedia_Pictures02_3
+  - first:
+      213: 5227386118872305320
+    second: Color_SocialMedia_Pictures02_4
+  - first:
+      213: -4785677826060282671
+    second: Color_SocialMedia_Pictures02_5
+  - first:
+      213: -5492879775354537362
+    second: Color_SocialMedia_Pictures02_6
+  - first:
+      213: 854978903165862057
+    second: Color_SocialMedia_Pictures02_7
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Color_SocialMedia_Pictures02_0
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 1219
+        width: 593
+        height: 816
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f5f98f6bc0d5ea09890e9ee085db148
+      internalID: 2918066472641003004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Color_SocialMedia_Pictures02_1
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 1212
+        width: 593
+        height: 786
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a6bd14a2694a5081a8c49e9669b974c
+      internalID: 4549952849371540819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Color_SocialMedia_Pictures02_2
+      rect:
+        serializedVersion: 2
+        x: 1307
+        y: 1219
+        width: 593
+        height: 786
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: defa89d8566fbdfdfbef037e6b9db8ee
+      internalID: 8773731010742417435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Color_SocialMedia_Pictures02_3
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 590
+        width: 571
+        height: 571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d44e426a2364c46a28199e6c046af167
+      internalID: 2292901190828791575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Color_SocialMedia_Pictures02_4
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 590
+        width: 571
+        height: 571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2422897f557912332b378c9bd2fee623
+      internalID: 5227386118872305320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Color_SocialMedia_Pictures02_5
+      rect:
+        serializedVersion: 2
+        x: 1307
+        y: 590
+        width: 571
+        height: 571
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01152d400e5f67b3f964bd1ce0ec9848
+      internalID: -4785677826060282671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Color_SocialMedia_Pictures02_6
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 55
+        width: 903
+        height: 478
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e555542130b701e90a934e58cee67df4
+      internalID: -5492879775354537362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Color_SocialMedia_Pictures02_7
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 55
+        width: 903
+        height: 478
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ded20077d6885da6ea79a5ec7c02e0a3
+      internalID: 854978903165862057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: d3643fb4fe956c7599f87e8d4be8a9eb
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
