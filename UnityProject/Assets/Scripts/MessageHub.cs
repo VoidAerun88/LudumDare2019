@@ -10,14 +10,19 @@ public enum ResponseStatus
     Correct
 }
 
+[System.Serializable]
+public class ContactInfo
+{
+    public string Name;
+    public Color BGColor;
+    public Sprite ProfileImage;
+}
+
 public class MessageHub : MonoBehaviour
 {
     public TextSequence TextSequence;
     public List<TextSequence> IgnoredTextSequences;
     public TextSequence WrongTextSequence;
-
-    public List<ContactInfo> Contacts;
-    private Dictionary<string, ContactInfo> _contacts = new Dictionary<string, ContactInfo>();
 
     public MessageBox MessageBox;
 
@@ -32,23 +37,11 @@ public class MessageHub : MonoBehaviour
     public bool _showingMessage;
 
     private float _lockoutTime;
-
-    [System.Serializable]
-    public class ContactInfo
-    {
-        public string Name;
-        public Color BGColor;
-        public Sprite ProfileImage;
-    }
-
+    
     private void Awake()
     {
         _nextDialogIdx = 0;
         _ignoreLevel = 0;
-        foreach(var contact in Contacts)
-        {
-            _contacts.Add(contact.Name, contact);
-        }
     }
 
     // Start is called before the first frame update
@@ -66,11 +59,11 @@ public class MessageHub : MonoBehaviour
             var lastMessageInIgnoreSequence = _ignoreDialogIdx >= IgnoredTextSequences[_ignoreLevel].DialogList.Count - 1;
             if(lastMessageInIgnoreSequence)
             {
-                MessageBox.ShowMessage(ignoredDialog, _contacts[ignoredDialog.Sender], LastIgnoreMessageDismissed);
+                MessageBox.ShowMessage(ignoredDialog, LastIgnoreMessageDismissed);
             }
             else
             {
-                MessageBox.ShowMessage(ignoredDialog, _contacts[ignoredDialog.Sender], IgnoreMessageDismissed);
+                MessageBox.ShowMessage(ignoredDialog, IgnoreMessageDismissed);
             }
         }
         else if(_nextDialogIdx < TextSequence.DialogList.Count)
@@ -79,7 +72,7 @@ public class MessageHub : MonoBehaviour
             if(PhoneTime.Time >= next.TimeCondition)
             {
                 _showingMessage = true;
-                MessageBox.ShowMessage(next, _contacts[next.Sender], MainMessageDismissed);
+                MessageBox.ShowMessage(next, MainMessageDismissed);
                 _nextDialogIdx++;
             }
         }
