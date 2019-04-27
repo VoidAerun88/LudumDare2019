@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 96312617779014014}
   - component: {fileID: 96312617779014001}
+  - component: {fileID: 114444358406464020}
   m_Layer: 5
   m_Name: MessageBox
   m_TagString: Untagged
@@ -64,6 +65,25 @@ MonoBehaviour:
   - Name: System
     BGColor: {r: 0.94509804, g: 0.7647059, b: 0.3254902, a: 1}
     ProfileImage: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+--- !u!95 &114444358406464020
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96312617779014015}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9f95b8a0da967c54c9f7e70f4acefd20, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &511028801587046704
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,6 +399,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 931140351877786059}
+  - component: {fileID: 4527240741678461919}
   m_Layer: 5
   m_Name: MainMessage
   m_TagString: Untagged
@@ -404,8 +425,20 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 50, y: 0}
-  m_SizeDelta: {x: -100, y: 299.6}
+  m_SizeDelta: {x: -100, y: 300}
   m_Pivot: {x: 0.5, y: 1}
+--- !u!225 &4527240741678461919
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4992742683711226169}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &6642777578218100405
 GameObject:
   m_ObjectHideFlags: 0
