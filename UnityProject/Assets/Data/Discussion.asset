@@ -12,4 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da3ff07714365b043896a014f38fff10, type: 3}
   m_Name: Discussion
   m_EditorClassIdentifier: 
-  DialogList: []
+  DialogList:
+  - TimeCondition: 2
+    MessageColor: {r: 1, g: 1, b: 1, a: 1}
+    Sender: Mom
+    SenderMessage: Hey you! It's been a while, how are you doing, darling?
+    CorrectResponse: Hi Mom! yeah, my network is growing! I hope to get even more
+      followers!
+    WrongResponses: []
+  - TimeCondition: 3
+    MessageColor: {r: 1, g: 1, b: 1, a: 1}
+    Sender: Mom
+    SenderMessage: Hey you! It's been a while, how are you doing, darling?
+    CorrectResponse: Hi Mom! yeah, my network is growing! I hope to get even more
+      followers!
+    WrongResponses: []
