@@ -53,11 +53,12 @@ MonoBehaviour:
   Photo: {fileID: 2928624287080464681}
   Name: {fileID: 2374566526397706772}
   Content: {fileID: 1837875983932394956}
+  DisplayTime: 3
   Contacts:
   - Name: Mom
     BGColor: {r: 0.3019608, g: 0.7372549, b: 0.8509804, a: 1}
     ProfileImage: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  - Name: Sister
+  - Name: Sis
     BGColor: {r: 0.23137255, g: 0.9254902, b: 0.47058824, a: 1}
     ProfileImage: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   - Name: System
