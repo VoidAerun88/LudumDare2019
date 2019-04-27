@@ -24,7 +24,7 @@ public static class PhoneTime
             var hours = Mathf.Floor(currentTime);
             currentTime -= hours;
             var minutes = Mathf.Floor(currentTime * 100);
-            return string.Format("Day {0} {1:00}:{2:00}", day + 1, hours, minutes);
+            return string.Format("Day {0}\n{1:00}:{2:00}", day + 1, hours, minutes);
         }
     }
 
