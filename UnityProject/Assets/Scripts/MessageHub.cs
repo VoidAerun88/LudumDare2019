@@ -35,6 +35,8 @@ public class MessageHub : MonoBehaviour
     [ReadOnly]
     public int _ignoreDialogIdx;
 
+    public bool _wrongFeedback;
+
     [ReadOnly]
     public bool _showingMessage;
 
@@ -54,10 +56,16 @@ public class MessageHub : MonoBehaviour
             return;
         }
 
-        if(_ignoreLevel > 0)
+        if(_wrongFeedback)
         {
             _showingMessage = true;
-            TextSequence.Dialog ignoredDialog = IgnoredTextSequences[_ignoreLevel].DialogList[_ignoreDialogIdx];
+            Dialog wrongDialog = WrongTextSequence.DialogList[Random.Range(0, WrongTextSequence.DialogList.Count)];
+            MessageBox.ShowMessage(wrongDialog, WrongMessageDismissed);
+        }
+        else if(_ignoreLevel > 0)
+        {
+            _showingMessage = true;
+            Dialog ignoredDialog = IgnoredTextSequences[_ignoreLevel].DialogList[_ignoreDialogIdx];
             var lastMessageInIgnoreSequence = _ignoreDialogIdx >= IgnoredTextSequences[_ignoreLevel].DialogList.Count - 1;
             if(lastMessageInIgnoreSequence)
             {
@@ -107,14 +115,13 @@ public class MessageHub : MonoBehaviour
         {
             case ResponseStatus.Correct:
                 _ignoreDialogIdx++;
-                _lockoutTime = PhoneTime.Time + 5f;
+                _lockoutTime = PhoneTime.Time + dialog.LockoutTime;
                 break;
             case ResponseStatus.Ignored:
                 _ignoreLevel++;
-                _lockoutTime = PhoneTime.Time + 5f;
+                _lockoutTime = PhoneTime.Time + dialog.LockoutTime;
                 break;
             case ResponseStatus.Incorrect:
-                // go to incorrect
                 _lockoutTime = PhoneTime.Time + dialog.LockoutTime;
                 break;
         }
@@ -128,17 +135,31 @@ public class MessageHub : MonoBehaviour
         {
             case ResponseStatus.Correct:
                 _ignoreLevel = 0;
-                _lockoutTime = PhoneTime.Time + 5f;
+                _lockoutTime = PhoneTime.Time + dialog.LockoutTime;
                 break;
             case ResponseStatus.Ignored:
-                _lockoutTime = PhoneTime.Time + 5f;
+                _lockoutTime = PhoneTime.Time + dialog.LockoutTime;
                 break;
             case ResponseStatus.Incorrect:
-                // go to incorrect
                 _lockoutTime = PhoneTime.Time + dialog.LockoutTime;
                 break;
         }
 
+        _showingMessage = false;
+    }
+
+    private void WrongMessageDismissed(Dialog dialog, ResponseStatus status)
+    {
+        switch (status)
+        {
+            case ResponseStatus.Correct:
+            case ResponseStatus.Ignored:
+            case ResponseStatus.Incorrect:
+                _lockoutTime = PhoneTime.Time + dialog.LockoutTime;
+                break;
+        }
+        
+        _wrongFeedback = false;
         _showingMessage = false;
     }
 }
