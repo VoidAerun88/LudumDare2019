@@ -11,6 +11,7 @@ public class TextSequence : ScriptableObject
     public class Dialog
     {
         public float TimeCondition;
+        public float LockoutTime;
         public Color MessageColor = Color.white;
         public string Sender;
         public string SenderMessage;
