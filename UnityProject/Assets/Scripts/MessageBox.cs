@@ -1,18 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class MessageBox : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Image Photo;
+    public TMP_Text Name;
+    public TMP_Text Content;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
