@@ -54,24 +54,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextSequence: {fileID: 11400000, guid: 3d8f08be54e0ef14e9a294ad8b0d6a70, type: 2}
   IgnoredTextSequences:
-  - {fileID: 11400000, guid: 3d8f08be54e0ef14e9a294ad8b0d6a70, type: 2}
-  - {fileID: 11400000, guid: 3d8f08be54e0ef14e9a294ad8b0d6a70, type: 2}
-  - {fileID: 11400000, guid: 3d8f08be54e0ef14e9a294ad8b0d6a70, type: 2}
-  WrongTextSequence: {fileID: 11400000, guid: 3d8f08be54e0ef14e9a294ad8b0d6a70, type: 2}
-  Contacts:
-  - Name: Mom
-    BGColor: {r: 0.3003738, g: 0.7357674, b: 0.8490566, a: 1}
-    ProfileImage: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  - Name: Sister
-    BGColor: {r: 0.23113208, g: 0.9245283, b: 0.47162625, a: 1}
-    ProfileImage: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  - Name: System
-    BGColor: {r: 0.9433962, g: 0.76443845, b: 0.32484868, a: 1}
-    ProfileImage: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 11400000, guid: 6fa9f0af0c706f94fb197a3dfb4cc8d0, type: 2}
+  - {fileID: 11400000, guid: 5f7674339aca9f140b9d2d5746198078, type: 2}
+  - {fileID: 11400000, guid: 46e4085d1fd377542976b1d237fdff7d, type: 2}
+  WrongTextSequence: {fileID: 11400000, guid: a30bf0bacab306a4d837a8a9df9eac25, type: 2}
   MessageBox: {fileID: 5586097223955807968}
+  IgnoredTimeDelay: 5
+  WrongTimeDelay: 3
   _ignoreLevel: 0
   _nextDialogIdx: 0
   _ignoreDialogIdx: 0
+  _wrongFeedback: 0
   _showingMessage: 0
 --- !u!222 &5586097223907479710
 CanvasRenderer:
