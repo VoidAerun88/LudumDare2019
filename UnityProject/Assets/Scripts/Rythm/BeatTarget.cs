@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using TMPro;
 
 public class BeatTarget : MonoBehaviour
 {
@@ -14,19 +15,17 @@ public class BeatTarget : MonoBehaviour
 
     public event Action<BeatTarget> OnDone;
 
+    [SerializeField]
+    private TMP_Text _text;
+
     private State _state;
     private float _startDate = -1f;
     private float _duration = -1f;
-    private Text _text;
+
 
     public float Precision = 0.2f;
     public bool IsValid => _state == State.Valid;
     
-    protected void Awake()
-    {
-        _text = GetComponentInChildren<Text>();   
-    }
-
     private void Update()
     {
         if(_startDate < 0)
@@ -54,7 +53,6 @@ public class BeatTarget : MonoBehaviour
     {
         if(_state > State.None)
         {
-            Debug.Log("NO BeatAction");
             return;
         }
 

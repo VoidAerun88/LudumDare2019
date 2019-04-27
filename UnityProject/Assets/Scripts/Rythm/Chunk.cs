@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Chunk : MonoBehaviour
 {
+    public string Key;
     public List<BeatTarget> BeatTargets = new List<BeatTarget>();
-    public float BeatDuration;
 
     private int _currentBeatIndex = 0;
     private int _validCount = 0;
@@ -17,18 +17,25 @@ public class Chunk : MonoBehaviour
             var beatTarget = child.gameObject.GetComponent<BeatTarget>();
             beatTarget.OnDone += OnBeatTargetDone;
             BeatTargets.Add(beatTarget);
-        }
-
-        StartSequece();
+        }    
     }
 
-    public void StartSequece()
+    public void Init(string templateId, float beatDuration)
+    {
+        Key = templateId;
+
+        
+
+        StartSequece(beatDuration);
+    }
+
+    public void StartSequece(float beatDuration)
     {
         Reset();
 
         for (int i = 0; i < BeatTargets.Count; i++)
         {   
-            BeatTargets[i].StartSequence(BeatDuration * (i + 1));
+            BeatTargets[i].StartSequence(beatDuration * (i + 1));
             BeatTargets[i].gameObject.SetActive(true);
         }
     }
@@ -50,7 +57,8 @@ public class Chunk : MonoBehaviour
             {
                 Debug.Log($"Chunk Valid {_validCount} == {BeatTargets.Count - 1}");
             }
-            StartSequece();
+
+            GetComponentInParent<ChunkSystem>().PushPool(this);
         }
     }
 
