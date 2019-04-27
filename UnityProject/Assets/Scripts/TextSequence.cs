@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Create Text Sequence")]
@@ -18,4 +19,10 @@ public class TextSequence : ScriptableObject
     }
 
     public List<Dialog> DialogList;
+
+    [ContextMenu("SortByTime")]
+    private void SortByTime()
+    {
+        DialogList.Sort((x, y) => { return (x.TimeCondition.CompareTo(y.TimeCondition)); });
+    }
 }
