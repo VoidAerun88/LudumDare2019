@@ -1,31 +1,78 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
+using UnityEngine.UI;
 using System;
 
-public class BeatTarget : MonoBehaviour, IPointerClickHandler
+public class BeatTarget : MonoBehaviour
 {
-    Action<BeatTarget> OnDone;
+    private enum State {
+        None = 0,
+        Valid,
+        Invalid, 
+    }
 
-    private float _startDate = -1d;
+    public event Action<BeatTarget> OnDone;
+
+    private State _state;
+    private float _startDate = -1f;
     private float _duration = -1f;
+    private Text _text;
 
     public float Precision = 0.2f;
-    public bool IsValid { get;  private set;}  
+    public bool IsValid => _state == State.Valid;
+    
+    protected void Awake()
+    {
+        _text = GetComponentInChildren<Text>();   
+    }
+
+    private void Update()
+    {
+        if(_startDate < 0)
+        {
+            return;
+        }
+
+        var elapsed = (Time.time - _startDate);
+        _text.text = $"{_duration - elapsed}";
+
+        if(elapsed >= _duration)
+        {
+            Finish();
+        }
+    }
 
     public void StartSequence(float duration)
     {
+        _state = State.None;
         _startDate = Time.time;
         _duration = duration;
     }
 
-    public void OnPointerClick(PointerEventData pointerEventData)
+    public void BeatAction()
     {
-        if(Mathf.Abs(_duration - (Time.time - _startDate)) <= Precision)
+        if(_state > State.None)
         {
-            IsValid = true;
+            Debug.Log("NO BeatAction");
+            return;
         }
-        OnDone?.invoke(this);   
+
+        var timeLeft = _duration - (Time.time - _startDate);
+        if(timeLeft > 0 && timeLeft <= Precision)
+        {
+            Debug.LogError("ValidBeatAction");
+            _state = State.Valid;
+        } else {
+            Debug.Log("InValidBeatAction");
+            _state = State.Invalid;
+        }
+
+        Finish();
+    }
+
+    public void Finish()
+    {
+        OnDone?.Invoke(this);  
     }
 }
