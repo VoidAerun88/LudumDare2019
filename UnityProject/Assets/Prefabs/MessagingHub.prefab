@@ -53,6 +53,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextSequence: {fileID: 11400000, guid: 3d8f08be54e0ef14e9a294ad8b0d6a70, type: 2}
+  IgnoredTextSequences:
+  - {fileID: 11400000, guid: 3d8f08be54e0ef14e9a294ad8b0d6a70, type: 2}
+  - {fileID: 11400000, guid: 3d8f08be54e0ef14e9a294ad8b0d6a70, type: 2}
+  - {fileID: 11400000, guid: 3d8f08be54e0ef14e9a294ad8b0d6a70, type: 2}
+  WrongTextSequence: {fileID: 11400000, guid: 3d8f08be54e0ef14e9a294ad8b0d6a70, type: 2}
+  Contacts:
+  - Name: Mom
+    BGColor: {r: 0.3003738, g: 0.7357674, b: 0.8490566, a: 1}
+    ProfileImage: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  - Name: Sister
+    BGColor: {r: 0.23113208, g: 0.9245283, b: 0.47162625, a: 1}
+    ProfileImage: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  - Name: System
+    BGColor: {r: 0.9433962, g: 0.76443845, b: 0.32484868, a: 1}
+    ProfileImage: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  MessageBox: {fileID: 5586097223955807968}
+  _ignoreLevel: 0
+  _nextDialogIdx: 0
+  _ignoreDialogIdx: 0
+  _showingMessage: 0
 --- !u!222 &5586097223907479710
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -316,6 +336,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1837875983932394956, guid: a72ae5d2e512ff648996cfdb2507e609,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a72ae5d2e512ff648996cfdb2507e609, type: 3}
 --- !u!224 &5586097223955807983 stripped
@@ -324,3 +349,15 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 5536021275592710033}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5586097223955807968 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 96312617779014001, guid: a72ae5d2e512ff648996cfdb2507e609,
+    type: 3}
+  m_PrefabInstance: {fileID: 5536021275592710033}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09237e75775961941907291e2b959379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
