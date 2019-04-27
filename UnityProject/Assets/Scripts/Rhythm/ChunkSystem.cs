@@ -66,7 +66,7 @@ public class ChunkSystem : MonoBehaviour
 
     public Chunk PopPool() 
     {
-        var key = _pooledChunk.Keys.ToList()[Random.Range(0, _pooledChunk.Keys.Count - 1)];
+        var key = _pooledChunk.Keys.ToList()[Random.Range(0, _pooledChunk.Keys.Count)];
         var chunks = _pooledChunk[key];
         
         Chunk chunk = null; 
