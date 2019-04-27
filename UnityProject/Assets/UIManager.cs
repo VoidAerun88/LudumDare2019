@@ -6,11 +6,13 @@ public class UIManager : MonoBehaviour
 {
     public GameObject OptionPanel = null;
 
-    private void Awake() {
+    private void Awake()
+    {
         Object.DontDestroyOnLoad(this);
     }
 
-    public void ToggleOptionMenu(){
+    public void ToggleOptionMenu()
+    {
         OptionPanel.SetActive(!OptionPanel.activeSelf);
     }
 }
