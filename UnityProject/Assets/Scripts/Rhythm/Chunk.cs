@@ -16,6 +16,7 @@ public class Chunk : MonoBehaviour
         {
             var beatTarget = child.gameObject.GetComponent<BeatTarget>();
             beatTarget.OnDone += OnBeatTargetDone;
+            beatTarget.OnVisualDone += OnBeatTargetVisualDone;
             BeatTargets.Add(beatTarget);
         }    
     }
@@ -47,17 +48,14 @@ public class Chunk : MonoBehaviour
             Debug.Log($"Chunk : target is valid");
             _validCount++;
         }
-        
-        target.gameObject.SetActive(false);
+    }
 
+    private void OnBeatTargetVisualDone(BeatTarget target)
+    {
         _currentBeatIndex++;
+        target.gameObject.SetActive(false);
         if(_currentBeatIndex >= BeatTargets.Count)
         {
-            if(_validCount == (BeatTargets.Count - 1))
-            {
-                Debug.Log($"Chunk Valid {_validCount} == {BeatTargets.Count - 1}");
-            }
-
             GetComponentInParent<ChunkSystem>().PushPool(this);
         }
     }
