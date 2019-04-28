@@ -11,19 +11,16 @@ public class SwipeComponent : MonoBehaviour
     [SerializeField, Range(0, 360)]
     private float _dragAngleThreshold = 3;
     
-    public bool IsValid = false;
-
     private BeatTarget _target;
 
-    private SwipeElement[] _swipeElements = null;
+    public bool IsValid = false;
     public float DragThreshold => _dragThreshold;
     public float DragAngleThreshold => _dragAngleThreshold;
 
     private bool _firstFilled = false;
     private Vector2 _firstEvent;
     private Vector2 _lastEvent;
-
-    private int _validCount = 0;
+    private Vector2 _swipeDirection;
 
     private void Awake()
     {
@@ -37,7 +34,7 @@ public class SwipeComponent : MonoBehaviour
         var swipeController = transform.parent.GetComponent<SwipeController>();
         if(swipeController == null)
         {
-            transform.parent.AddComponent<SwipeController>();
+            transform.parent.gameObject.AddComponent<SwipeController>();
         }
     }
 
@@ -51,7 +48,7 @@ public class SwipeComponent : MonoBehaviour
 
     public void OnDrag(PointerEventData pointerEventData)
     {
-        if(!RectangleContainsScreenPoint(GetComponent<RectTransform>(), pointerEventData.position, Camera.main))
+        if(!RectTransformUtility.RectangleContainsScreenPoint(GetComponent<RectTransform>(), pointerEventData.position, Camera.main))
         {
             return;
         }
@@ -73,7 +70,7 @@ public class SwipeComponent : MonoBehaviour
         }
     }
 
-    public void OnDragEnd(PointerEventData pointerEventData)
+    public void OnEndDrag(PointerEventData pointerEventData)
     {
         _target.BeatAction();
     }

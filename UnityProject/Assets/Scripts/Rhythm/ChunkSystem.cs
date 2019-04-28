@@ -86,10 +86,10 @@ public class ChunkSystem : MonoBehaviour
 #if UNITY_EDITOR
     private void OnValidate()
     {
-        if(_emptyBeatMax <= _emptyBeatMin)
-        {
-            _emptyBeatMax++;
-        }
+        //if(_emptyBeatMax <= _emptyBeatMin)
+        //{
+        //    _emptyBeatMax++;
+        //}
     }
 #endif
 }
