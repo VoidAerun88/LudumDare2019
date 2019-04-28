@@ -336,7 +336,7 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-  - Time: 100
+  - Time: 105
     Event:
       m_PersistentCalls:
         m_Calls:
@@ -370,7 +370,7 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-  - Time: 200
+  - Time: 205
     Event:
       m_PersistentCalls:
         m_Calls:
