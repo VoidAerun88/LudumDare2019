@@ -30,5 +30,5 @@ MonoBehaviour:
     LockoutTime: 5
     Sender: 
     SenderMessage: What was that?
-    CorrectResponse: Tested speech to text, not that great yet...
+    CorrectResponse: Speech-to-text caught the TV, not that great...
     WrongResponses: []
