@@ -131,6 +131,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8813249459218813401, guid: 9fb74ed914d3320c7adbbe6640c2c7e0,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7183878546387095077, guid: 9fb74ed914d3320c7adbbe6640c2c7e0,
         type: 3}
       propertyPath: m_RootOrder
@@ -156,6 +161,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.7
       objectReference: {fileID: 0}
+    - target: {fileID: 786903779219430552, guid: 9fb74ed914d3320c7adbbe6640c2c7e0,
+        type: 3}
+      propertyPath: m_Color.rgba
+      value: 4279872278
+      objectReference: {fileID: 0}
+    - target: {fileID: 786903779219430552, guid: 9fb74ed914d3320c7adbbe6640c2c7e0,
+        type: 3}
+      propertyPath: m_Size
+      value: 0.09
+      objectReference: {fileID: 0}
     - target: {fileID: 1886958331630822684, guid: 9fb74ed914d3320c7adbbe6640c2c7e0,
         type: 3}
       propertyPath: m_Sprite
@@ -177,11 +192,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a52462cec0a0bffaf939bfda7d478147, type: 2}
-    - target: {fileID: 786903779219430552, guid: 9fb74ed914d3320c7adbbe6640c2c7e0,
-        type: 3}
-      propertyPath: m_Color.rgba
-      value: 4284930337
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6514407982843713347, guid: 9fb74ed914d3320c7adbbe6640c2c7e0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9fb74ed914d3320c7adbbe6640c2c7e0, type: 3}
