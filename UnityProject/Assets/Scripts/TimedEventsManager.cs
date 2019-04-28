@@ -18,6 +18,7 @@ public class TimedEventsManager : MonoBehaviour
     private void Awake()
     {
         TimedEvents.Sort((x, y) => { return (x.Time.CompareTo(y.Time)); });
+        FollowersManager.Reset();
     }
 
     private void Update()

@@ -14,4 +14,9 @@ public static class FollowersManager
     {
         Followers += (int)(follower * PhoneTime.Time);
     }
+
+    public static void Reset()
+    {
+        Followers = 2;
+    }
 }
