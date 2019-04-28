@@ -69,7 +69,9 @@ public class MessageHub : MonoBehaviour
             {
                 _ignoreLevel = IgnoredTextSequences.Count - 1;
             }
-            Dialog ignoredDialog = IgnoredTextSequences[_ignoreLevel].DialogList[_ignoreDialogIdx];
+            
+            var ignoredDialog = IgnoredTextSequences[_ignoreLevel].DialogList[_ignoreDialogIdx];
+
             var lastMessageInIgnoreSequence = _ignoreDialogIdx >= IgnoredTextSequences[_ignoreLevel].DialogList.Count - 1;
             if(lastMessageInIgnoreSequence)
             {
@@ -102,6 +104,7 @@ public class MessageHub : MonoBehaviour
                 break;
             case ResponseStatus.Ignored:
                 _ignoreLevel++;
+                _ignoreDialogIdx = 0;
                 _lockoutTime = PhoneTime.Time + IgnoredTimeDelay;
                 break;
             case ResponseStatus.Incorrect:
@@ -123,6 +126,7 @@ public class MessageHub : MonoBehaviour
                 break;
             case ResponseStatus.Ignored:
                 _ignoreLevel++;
+                _ignoreDialogIdx = 0;
                 _lockoutTime = PhoneTime.Time + dialog.LockoutTime;
                 break;
             case ResponseStatus.Incorrect:

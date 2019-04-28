@@ -61,6 +61,7 @@ public class MessageBox : MonoBehaviour
     private void OnDismiss()
     {
         Animator.SetBool("Display", false);
+        _expanded = false;
     }
     
     private void OnAnswer(int answer)
