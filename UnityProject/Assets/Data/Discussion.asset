@@ -75,60 +75,60 @@ MonoBehaviour:
     CorrectResponse: Thanks Sis, it means a lot.
     WrongResponses:
     - So it's YOUR fault if she's dead!
-  - TimeCondition: 180
+  - TimeCondition: 160
     LockoutTime: 2
     Sender: Sis
     SenderMessage: 'I think you should hear it from me: There''s been another victim.'
     CorrectResponse: What? Who?
     WrongResponses: []
-  - TimeCondition: 180
+  - TimeCondition: 160
     LockoutTime: 2
     Sender: Sis
     SenderMessage: A guy from the influencer business, can't disclose him name yet.
     CorrectResponse: Oh no... do I know him?
     WrongResponses: []
-  - TimeCondition: 180
+  - TimeCondition: 160
     LockoutTime: 2
     Sender: Sis
     SenderMessage: I'm not sure, but sorry, I have to talk about official business
       now, do you have any idea who might be after influencers?
     CorrectResponse: How would I know?!?
     WrongResponses: []
-  - TimeCondition: 180
+  - TimeCondition: 160
     LockoutTime: 2
     Sender: Sis
     SenderMessage: Is there vehement protesters? Rumors about ennemies?
     CorrectResponse: Not that I know of... It would help to know who it was...
     WrongResponses:
     - Aliens did it, it's always the aliens!
-  - TimeCondition: 180
+  - TimeCondition: 160
     LockoutTime: 2
     Sender: Sis
     SenderMessage: If you think about anything, talk to me okay? Even if you think
       it's nothing.
     CorrectResponse: I will! Sorry to be that useless...
     WrongResponses: []
-  - TimeCondition: 180
+  - TimeCondition: 160
     LockoutTime: 2
     Sender: Sis
     SenderMessage: It's okay, I didn't expect much... I'll get back to you when I
       can tell you more.
     CorrectResponse: K, thanks.
     WrongResponses: []
-  - TimeCondition: 200
+  - TimeCondition: 190
     LockoutTime: 2
     Sender: Sis
     SenderMessage: The name of the second victim is public, it's Super Steevy...
     CorrectResponse: I saw it in the news. I met him in a gala last month...
     WrongResponses:
     - My psychic told I was better off with her as my only friend.
-  - TimeCondition: 200
+  - TimeCondition: 190
     LockoutTime: 2
     Sender: Sis
     SenderMessage: Really? Was it the one for the Earth Day?
     CorrectResponse: Yes, how do you know?
     WrongResponses: []
-  - TimeCondition: 200
+  - TimeCondition: 190
     LockoutTime: 2
     Sender: Sis
     SenderMessage: The first victim was there too, it's a lead! Thanks a lot!
