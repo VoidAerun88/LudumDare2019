@@ -65,6 +65,10 @@ public class MessageHub : MonoBehaviour
         else if(_ignoreLevel > 0)
         {
             _showingMessage = true;
+            if(_ignoreLevel >= IgnoredTextSequences.Count)
+            {
+                _ignoreLevel = IgnoredTextSequences.Count - 1;
+            }
             Dialog ignoredDialog = IgnoredTextSequences[_ignoreLevel].DialogList[_ignoreDialogIdx];
             var lastMessageInIgnoreSequence = _ignoreDialogIdx >= IgnoredTextSequences[_ignoreLevel].DialogList.Count - 1;
             if(lastMessageInIgnoreSequence)

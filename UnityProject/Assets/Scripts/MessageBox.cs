@@ -11,6 +11,7 @@ public class MessageBox : MonoBehaviour
     public Image Photo;
     public TMP_Text Name;
     public TMP_Text Content;
+    public Image Background;
 
     public Button ReplyButton;
     public Button DismissButton;
@@ -25,6 +26,8 @@ public class MessageBox : MonoBehaviour
     
     private int _answer;
     private int _correctAnswer;
+    private int _answerCount;
+    private bool _expanded;
 
     private void Awake()
     {
@@ -33,18 +36,26 @@ public class MessageBox : MonoBehaviour
             _contacts.Add(contact.Name, contact);
         }
         
-        ReplyButton.onClick.AddListener(OnReply);
+        ReplyButton.onClick.AddListener(ExpandMessage);
         DismissButton.onClick.AddListener(OnDismiss);
         for(int i = 0;i<AnswerButtons.Count;++i)
         {
             int value = i;
             AnswerButtons[i].onClick.AddListener(()=> { OnAnswer(value); });
         }
+
+        DismissButton.gameObject.SetActive(false);
     }
 
-    private void OnReply()
+    private void ExpandMessage()
     {
         Animator.SetTrigger("Expand");
+
+        for (int i = 0; i < _answerCount; ++i)
+        {
+            AnswerButtons[i].gameObject.SetActive(true);
+        }
+        _expanded = true;
     }
 
     private void OnDismiss()
@@ -60,29 +71,46 @@ public class MessageBox : MonoBehaviour
     public void ShowMessage(Dialog dialog, Action<Dialog,ResponseStatus> callback)
     {
         _answer = -1;
+        _expanded = false;
 
-        var contact = _contacts[dialog.Sender];
+        DismissButton.gameObject.SetActive(true);
+
+        if (!string.IsNullOrEmpty(dialog.Sender))
+        {
+            var contact = _contacts[dialog.Sender];
+            Background.color = contact.BGColor;
+            Photo.sprite = contact.ProfileImage;
+        }
 
         Name.text = dialog.Sender;
-        Photo.sprite = contact.ProfileImage;
         Content.text = dialog.SenderMessage;
-        
-        int answerCount = dialog.WrongResponses.Count + 1;
-        _correctAnswer = UnityEngine.Random.Range(0, answerCount);
 
-        for(int i = 0;i< answerCount;++i)
+        foreach(var answerButton in AnswerButtons)
         {
-            if(i == _correctAnswer)
+            answerButton.gameObject.SetActive(false);
+        }
+
+        foreach(var answerButton in AnswerButtons)
+        {
+            answerButton.gameObject.SetActive(false);
+        }
+
+        _answerCount = dialog.WrongResponses.Count + 1;
+        _correctAnswer = UnityEngine.Random.Range(0, _answerCount);
+
+        for (int i = 0; i < _answerCount; ++i)
+        {
+            if (i == _correctAnswer)
             {
-                AnswerButtons[i].GetComponentInChildren<Text>().text = dialog.CorrectResponse;
+                AnswerButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = dialog.CorrectResponse;
             }
-            else if(i > _correctAnswer)
+            else if (i > _correctAnswer)
             {
-                AnswerButtons[i].GetComponentInChildren<Text>().text = dialog.WrongResponses[i-1];
+                AnswerButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = dialog.WrongResponses[i - 1];
             }
             else
             {
-                AnswerButtons[i].GetComponentInChildren<Text>().text = dialog.WrongResponses[i];
+                AnswerButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = dialog.WrongResponses[i];
             }
         }
 
@@ -96,7 +124,7 @@ public class MessageBox : MonoBehaviour
 
         var dismissTime = PhoneTime.Time + AutoDismissTime;
 
-        while(PhoneTime.Time < dismissTime && _answer < 0)
+        while((_expanded || PhoneTime.Time < dismissTime) && _answer < 0)
         {
             yield return null;
         }
@@ -118,5 +146,7 @@ public class MessageBox : MonoBehaviour
         }
         
         Animator.SetBool("Display", false);
+
+        DismissButton.gameObject.SetActive(false);
     }
 }
