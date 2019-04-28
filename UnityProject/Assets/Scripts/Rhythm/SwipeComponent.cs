@@ -13,7 +13,7 @@ public class SwipeComponent : MonoBehaviour
         Invalid, 
     }
 
-    [SerializeField, Range(0, 10)]
+    [SerializeField]
     private float _dragThreshold = 3;
     [SerializeField, Range(0, 180)]
     private float _dragAngleThreshold = 3;
@@ -54,7 +54,7 @@ public class SwipeComponent : MonoBehaviour
             return;
         }
 
-        if(!RectTransformUtility.RectangleContainsScreenPoint(GetComponent<RectTransform>(), pointerEventData.position, Camera.main))
+        if(!_firstFilled && !RectTransformUtility.RectangleContainsScreenPoint(GetComponent<RectTransform>(), pointerEventData.position, Camera.main))
         {
             return;
         }
@@ -68,15 +68,17 @@ public class SwipeComponent : MonoBehaviour
         if(!_firstFilled)
         {
             _firstEvent = pointerEventData.position;
+            _lastEvent = _firstEvent;
             _firstFilled = true;
         } else
         {
             _lastEvent = pointerEventData.position;
         }
- 
+
         var delta = _lastEvent - _firstEvent;
+        Debug.Log($"delta.magnitude : {delta.magnitude}, Vector2.Angle(delta, transform.up) : {Vector2.Angle(delta, transform.up)}");
         if(delta.magnitude >= DragThreshold &&
-           Vector2.Angle(delta, _swipeDirection) < DragAngleThreshold)
+           Vector2.Angle(delta, transform.up) < DragAngleThreshold)
         {
             _state = State.Valid;
             _target.BeatAction();
@@ -86,4 +88,14 @@ public class SwipeComponent : MonoBehaviour
     public void OnEndDrag(PointerEventData pointerEventData)
     {
     }
+#if UNITY_EDITOR
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawLine(transform.position, transform.position + (Vector3)transform.up);
+        
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, transform.position + (Vector3)(_lastEvent - _firstEvent));
+    }
+#endif
 }

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae3fbdd4c43cfbe09a1f1b415669bfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dragThreshold: 0.27
-  _dragAngleThreshold: 75
+  _dragThreshold: 50
+  _dragAngleThreshold: 45
 --- !u!1001 &8000417314457534398
 PrefabInstance:
   m_ObjectHideFlags: 0

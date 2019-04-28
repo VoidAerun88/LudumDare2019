@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(BeatTarget))]
-public class TapComponent : MonoBehaviour, IPointerClickHandler
+public class TapComponent : MonoBehaviour, IPointerDownHandler
 {
     private BeatTarget _target;
     private void Awake()
@@ -12,7 +12,7 @@ public class TapComponent : MonoBehaviour, IPointerClickHandler
         _target = GetComponent<BeatTarget>();
     }
 
-    public void OnPointerClick(PointerEventData pointerEventData)
+    public void OnPointerDown(PointerEventData eventData)
     {
         _target.BeatAction();
     }
