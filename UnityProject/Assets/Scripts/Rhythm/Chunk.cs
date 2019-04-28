@@ -54,7 +54,7 @@ public class Chunk : MonoBehaviour
     {
         if(target.IsValid)
         {
-            FollowersManager.Instance.AddFollowers(target.FollowerValue);
+            FollowersManager.AddFollowers(target.FollowerValue);
             _validCount++;
         }
     }
