@@ -38,18 +38,11 @@ public class SwipeComponent : MonoBehaviour
         }
     }
 
-    private void OnDisable() {
-        var swipeController = transform.parent.GetComponent<SwipeController>();
-        if(swipeController != null)
-        {
-            Destroy(swipeController);
-        }
-    }
-
     public void OnDrag(PointerEventData pointerEventData)
     {
         if(!RectTransformUtility.RectangleContainsScreenPoint(GetComponent<RectTransform>(), pointerEventData.position, Camera.main))
         {
+            Debug.Log("Not me");
             return;
         }
 
@@ -63,6 +56,10 @@ public class SwipeComponent : MonoBehaviour
         }
 
         var delta = _lastEvent - _firstEvent;
+        Debug.LogWarning("####################################");
+        Debug.LogWarning($"delta.magnitude : {delta.magnitude}");
+        Debug.LogWarning($"Vector2.Angle(delta, _swipeDirection) : {Vector2.Angle(delta, _swipeDirection)}");
+        Debug.LogWarning("####################################");
         if(delta.magnitude >= DragThreshold &&
            Vector2.Angle(delta, _swipeDirection) < DragAngleThreshold)
         {

@@ -10,10 +10,6 @@ public class SwipeController : MonoBehaviour, IDragHandler, IEndDragHandler
     private void Awake()
     {
         _swipeComponents = GetComponentsInChildren<SwipeComponent>();
-        var rectTransform = gameObject.AddComponent<RectTransform>();
-        rectTransform.anchorMin = Vector2.zero;
-        rectTransform.anchorMax = Vector2.one;
-        rectTransform.pivot = new Vector2(.5f, .5f);
     }
 
     public void OnDrag(PointerEventData pointerEventData)

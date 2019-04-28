@@ -21,6 +21,14 @@ public class Chunk : MonoBehaviour
         }    
     }
 
+    private void OnDisable() {
+        var swipeController = transform.parent.GetComponent<SwipeController>();
+        if(swipeController != null)
+        {
+            Destroy(swipeController);
+        }
+    }
+
     public void Init(string templateId, float beatDuration)
     {
         Key = templateId;
