@@ -15,16 +15,13 @@ public class FollowersManager : MonoBehaviour
 
     // Your mom and sister will always follow you. 
     private int _followers = 2;
-    public int Followers
-    {
-        get => _followers;
-        set
-        {
-            _followers = _followers + value;
-            _followersText.text = $"{kFollowersPrefix}{_followers}";
-        }
-    }
 
     [SerializeField]
     private TMP_Text _followersText = null;
+
+    public void AddFollowers(int follower)
+    {
+        _followers += follower;
+        _followersText.text = $"{kFollowersPrefix}{_followers}";
+    }
 }

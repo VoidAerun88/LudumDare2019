@@ -5006,7 +5006,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5028,6 +5028,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8284418809045675407}
     m_Modifications:
+    - target: {fileID: 4207594886371605619, guid: ec65f32eafb7c8f52b3342d96e40b07c,
+        type: 3}
+      propertyPath: m_Name
+      value: ButtonLike
+      objectReference: {fileID: 0}
     - target: {fileID: 2230302616459289578, guid: ec65f32eafb7c8f52b3342d96e40b07c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5133,22 +5138,17 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 4207594886371605619, guid: ec65f32eafb7c8f52b3342d96e40b07c,
-        type: 3}
-      propertyPath: m_Name
-      value: ButtonLike
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec65f32eafb7c8f52b3342d96e40b07c, type: 3}
---- !u!1 &5657342220217442384 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4207594886371605619, guid: ec65f32eafb7c8f52b3342d96e40b07c,
-    type: 3}
-  m_PrefabInstance: {fileID: 8423573565517634595}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &7644064246344630217 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2230302616459289578, guid: ec65f32eafb7c8f52b3342d96e40b07c,
+    type: 3}
+  m_PrefabInstance: {fileID: 8423573565517634595}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5657342220217442384 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4207594886371605619, guid: ec65f32eafb7c8f52b3342d96e40b07c,
     type: 3}
   m_PrefabInstance: {fileID: 8423573565517634595}
   m_PrefabAsset: {fileID: 0}

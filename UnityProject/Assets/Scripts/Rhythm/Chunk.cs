@@ -21,6 +21,14 @@ public class Chunk : MonoBehaviour
         }    
     }
 
+    private void OnDisable() {
+        var swipeController = transform.parent.GetComponent<SwipeController>();
+        if(swipeController != null)
+        {
+            Destroy(swipeController);
+        }
+    }
+
     public void Init(string templateId, float beatDuration)
     {
         Key = templateId;
@@ -42,7 +50,7 @@ public class Chunk : MonoBehaviour
     {
         if(target.IsValid)
         {
-            FollowersManager.Instance.Followers = target.FollowerValue;
+            FollowersManager.Instance.AddFollowers(target.FollowerValue);
             _validCount++;
         }
     }
