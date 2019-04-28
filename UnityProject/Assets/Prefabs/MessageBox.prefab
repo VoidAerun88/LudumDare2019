@@ -61,7 +61,7 @@ MonoBehaviour:
   - {fileID: 8270735977134136694}
   - {fileID: 3656748312380423928}
   Animator: {fileID: 114444358406464020}
-  AutoDismissTime: 3
+  AutoDismissTime: 5
   Contacts:
   - Name: Mom
     BGColor: {r: 0.8313726, g: 0.90196085, b: 0.19215688, a: 1}

@@ -3,6 +3,7 @@
 public static class PhoneTime
 {
     public static float StartPhoneTime;
+    public static float Scale = 1.8f;
 
     private static float _initTime;
 
@@ -10,7 +11,7 @@ public static class PhoneTime
     {
         get
         {
-            return StartPhoneTime + UnityEngine.Time.time - _initTime;
+            return (StartPhoneTime + UnityEngine.Time.time - _initTime) * Scale;
         }
     }
 
