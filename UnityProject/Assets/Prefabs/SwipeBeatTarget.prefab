@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dragThreshold: 0.27
-  _dragAngleThreshold: 48
-  IsValid: 0
+  _dragAngleThreshold: 75
 --- !u!1001 &8000417314457534398
 PrefabInstance:
   m_ObjectHideFlags: 0

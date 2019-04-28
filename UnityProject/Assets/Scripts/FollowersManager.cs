@@ -18,7 +18,7 @@ public class FollowersManager : MonoBehaviour
 
     [SerializeField]
     private TMP_Text _followersText = null;
-
+    
     public void AddFollowers(int follower)
     {
         _followers += follower;

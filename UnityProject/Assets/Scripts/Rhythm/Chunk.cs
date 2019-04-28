@@ -15,10 +15,14 @@ public class Chunk : MonoBehaviour
         foreach(RectTransform child in transform)
         {
             var beatTarget = child.gameObject.GetComponent<BeatTarget>();
+            if(beatTarget == null)
+            {
+                continue;
+            }
             beatTarget.OnDone += OnBeatTargetDone;
             beatTarget.OnVisualDone += OnBeatTargetVisualDone;
             BeatTargets.Add(beatTarget);
-        }    
+        }
     }
 
     private void OnDisable() {

@@ -6,14 +6,21 @@ using UnityEngine.EventSystems;
 [RequireComponent(typeof(BeatTarget))]
 public class SwipeComponent : MonoBehaviour
 {
+    private enum State
+    {
+        None = 0,
+        Valid,
+        Invalid, 
+    }
+
     [SerializeField, Range(0, 10)]
     private float _dragThreshold = 3;
-    [SerializeField, Range(0, 360)]
+    [SerializeField, Range(0, 180)]
     private float _dragAngleThreshold = 3;
     
     private BeatTarget _target;
 
-    public bool IsValid = false;
+    public bool IsValid => _state == State.Valid;
     public float DragThreshold => _dragThreshold;
     public float DragAngleThreshold => _dragAngleThreshold;
 
@@ -21,6 +28,7 @@ public class SwipeComponent : MonoBehaviour
     private Vector2 _firstEvent;
     private Vector2 _lastEvent;
     private Vector2 _swipeDirection;
+    private State _state = State.None;
 
     private void Awake()
     {
@@ -29,6 +37,7 @@ public class SwipeComponent : MonoBehaviour
 
     private void OnEnable()
     {
+        _state = State.None;
         _swipeDirection = Camera.main.WorldToScreenPoint(transform.up);
         
         var swipeController = transform.parent.GetComponent<SwipeController>();
@@ -40,9 +49,21 @@ public class SwipeComponent : MonoBehaviour
 
     public void OnDrag(PointerEventData pointerEventData)
     {
+        if(_state > State.None)
+        {
+            return;
+        }
+
         if(!RectTransformUtility.RectangleContainsScreenPoint(GetComponent<RectTransform>(), pointerEventData.position, Camera.main))
         {
-            Debug.Log("Not me");
+            return;
+        }
+
+        var timeLeft = _target.Duration - _target.Elapsed;
+        if(timeLeft <= 0 || timeLeft > _target.Precision)
+        {
+            _state = State.Invalid;
+            _target.BeatAction();
             return;
         }
 
@@ -54,21 +75,17 @@ public class SwipeComponent : MonoBehaviour
         {
             _lastEvent = pointerEventData.position;
         }
-
+ 
         var delta = _lastEvent - _firstEvent;
-        Debug.LogWarning("####################################");
-        Debug.LogWarning($"delta.magnitude : {delta.magnitude}");
-        Debug.LogWarning($"Vector2.Angle(delta, _swipeDirection) : {Vector2.Angle(delta, _swipeDirection)}");
-        Debug.LogWarning("####################################");
         if(delta.magnitude >= DragThreshold &&
            Vector2.Angle(delta, _swipeDirection) < DragAngleThreshold)
         {
-            IsValid = true;
+            _target.BeatAction();
+            _state = State.Valid;
         }
     }
 
     public void OnEndDrag(PointerEventData pointerEventData)
     {
-        _target.BeatAction();
     }
 }
