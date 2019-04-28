@@ -62,8 +62,6 @@ public class SwipeComponent : MonoBehaviour
         var timeLeft = _target.Duration - _target.Elapsed;
         if(timeLeft <= 0 || timeLeft > _target.Precision)
         {
-            _state = State.Invalid;
-            _target.BeatAction();
             return;
         }
 
@@ -80,8 +78,8 @@ public class SwipeComponent : MonoBehaviour
         if(delta.magnitude >= DragThreshold &&
            Vector2.Angle(delta, _swipeDirection) < DragAngleThreshold)
         {
-            _target.BeatAction();
             _state = State.Valid;
+            _target.BeatAction();
         }
     }
 
