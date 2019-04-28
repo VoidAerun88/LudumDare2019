@@ -84,12 +84,19 @@ public class MessageHub : MonoBehaviour
         }
         else if(_nextDialogIdx < TextSequence.DialogList.Count)
         {
-            var next = TextSequence.DialogList[_nextDialogIdx];
-            if(PhoneTime.Time >= next.TimeCondition)
+            if(_nextDialogIdx >= TextSequence.DialogList.Count)
             {
-                _showingMessage = true;
-                MessageBox.ShowMessage(next, MainMessageDismissed);
-                _nextDialogIdx++;
+                // END
+            }
+            else
+            {
+                var next = TextSequence.DialogList[_nextDialogIdx];
+                if (PhoneTime.Time >= next.TimeCondition)
+                {
+                    _showingMessage = true;
+                    MessageBox.ShowMessage(next, MainMessageDismissed);
+                    _nextDialogIdx++;
+                }
             }
         }
     }
