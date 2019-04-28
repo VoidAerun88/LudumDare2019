@@ -16,6 +16,7 @@ public class MessageBox : MonoBehaviour
     public Button ReplyButton;
     public Button DismissButton;
     public List<Button> AnswerButtons;
+    public AudioSource NotifSound;
 
     public Animator Animator;
 
@@ -89,7 +90,10 @@ public class MessageBox : MonoBehaviour
         }
 
         _fullText = dialog.SenderMessage;
-        
+
+        NotifSound.Play();
+
+
         if (dialog.SenderMessage.Length > 15)
         {
             Content.text = _fullText.Substring(0, 15) + "...";
