@@ -29,6 +29,8 @@ public class MessageBox : MonoBehaviour
     private int _answerCount;
     private bool _expanded;
 
+    private string _fullText;
+
     private void Awake()
     {
         foreach (var contact in Contacts)
@@ -56,6 +58,8 @@ public class MessageBox : MonoBehaviour
             AnswerButtons[i].gameObject.SetActive(true);
         }
         _expanded = true;
+
+        Content.text = _fullText;
     }
 
     private void OnDismiss()
@@ -81,12 +85,21 @@ public class MessageBox : MonoBehaviour
             var contact = _contacts[dialog.Sender];
             Background.color = contact.BGColor;
             Photo.sprite = contact.ProfileImage;
+            Name.text = dialog.Sender;
         }
 
-        Name.text = dialog.Sender;
-        Content.text = dialog.SenderMessage;
+        _fullText = dialog.SenderMessage;
+        
+        if (dialog.SenderMessage.Length > 15)
+        {
+            Content.text = _fullText.Substring(0, 15) + "...";
+        }
+        else
+        {
+            Content.text = _fullText;
+        }
 
-        foreach(var answerButton in AnswerButtons)
+        foreach (var answerButton in AnswerButtons)
         {
             answerButton.gameObject.SetActive(false);
         }
