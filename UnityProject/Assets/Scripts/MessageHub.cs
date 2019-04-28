@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static TextSequence;
 
 public enum ResponseStatus
@@ -23,6 +24,7 @@ public class MessageHub : MonoBehaviour
     public TextSequence TextSequence;
     public List<TextSequence> IgnoredTextSequences;
     public TextSequence WrongTextSequence;
+    public string WinningScene;
 
     public MessageBox MessageBox;
     public float IgnoredTimeDelay = 5f;
@@ -83,20 +85,13 @@ public class MessageHub : MonoBehaviour
                 MessageBox.ShowMessage(ignoredDialog, IgnoreMessageDismissed);
             }
         }
-        else if(_nextDialogIdx < TextSequence.DialogList.Count)
+        else if (_nextDialogIdx < TextSequence.DialogList.Count)
         {
-            if(_nextDialogIdx >= TextSequence.DialogList.Count)
+            var next = TextSequence.DialogList[_nextDialogIdx];
+            if (PhoneTime.Time >= next.TimeCondition)
             {
-                // END
-            }
-            else
-            {
-                var next = TextSequence.DialogList[_nextDialogIdx];
-                if (PhoneTime.Time >= next.TimeCondition)
-                {
-                    _showingMessage = true;
-                    MessageBox.ShowMessage(next, MainMessageDismissed);
-                }
+                _showingMessage = true;
+                MessageBox.ShowMessage(next, MainMessageDismissed);
             }
         }
     }
@@ -109,6 +104,10 @@ public class MessageHub : MonoBehaviour
                 _ignoreLevel = 0;
                 _lockoutTime = PhoneTime.Time + dialog.LockoutTime;
                 _nextDialogIdx++;
+                if (_nextDialogIdx >= TextSequence.DialogList.Count)
+                {
+                    SceneManager.LoadScene(WinningScene);
+                }
                 break;
             case ResponseStatus.Ignored:
                 _ignoreLevel++;
@@ -135,11 +134,11 @@ public class MessageHub : MonoBehaviour
             case ResponseStatus.Ignored:
                 _ignoreLevel++;
                 _ignoreDialogIdx = 0;
-                _lockoutTime = PhoneTime.Time + dialog.LockoutTime;
+                _lockoutTime = PhoneTime.Time + IgnoredTimeDelay;
                 break;
             case ResponseStatus.Incorrect:
                 _wrongFeedback = true;
-                _lockoutTime = PhoneTime.Time + dialog.LockoutTime;
+                _lockoutTime = PhoneTime.Time + WrongTimeDelay;
                 break;
         }
         
@@ -157,11 +156,11 @@ public class MessageHub : MonoBehaviour
             case ResponseStatus.Ignored:
                 _ignoreLevel++;
                 _ignoreDialogIdx = 0;
-                _lockoutTime = PhoneTime.Time + dialog.LockoutTime;
+                _lockoutTime = PhoneTime.Time + IgnoredTimeDelay;
                 break;
             case ResponseStatus.Incorrect:
                 _wrongFeedback = true;
-                _lockoutTime = PhoneTime.Time + dialog.LockoutTime;
+                _lockoutTime = PhoneTime.Time + WrongTimeDelay;
                 break;
         }
 
