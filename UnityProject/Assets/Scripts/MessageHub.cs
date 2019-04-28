@@ -65,14 +65,15 @@ public class MessageHub : MonoBehaviour
         else if(_ignoreLevel > 0)
         {
             _showingMessage = true;
-            if(_ignoreLevel >= IgnoredTextSequences.Count)
+            if(_ignoreLevel > IgnoredTextSequences.Count)
             {
-                _ignoreLevel = IgnoredTextSequences.Count - 1;
+                _ignoreLevel = IgnoredTextSequences.Count;
             }
-            
-            var ignoredDialog = IgnoredTextSequences[_ignoreLevel].DialogList[_ignoreDialogIdx];
 
-            var lastMessageInIgnoreSequence = _ignoreDialogIdx >= IgnoredTextSequences[_ignoreLevel].DialogList.Count - 1;
+            var ignoreTextSequence = IgnoredTextSequences[_ignoreLevel - 1];
+            var ignoredDialog = ignoreTextSequence.DialogList[_ignoreDialogIdx];
+
+            var lastMessageInIgnoreSequence = _ignoreDialogIdx >= ignoreTextSequence.DialogList.Count - 1;
             if(lastMessageInIgnoreSequence)
             {
                 MessageBox.ShowMessage(ignoredDialog, LastIgnoreMessageDismissed);
@@ -95,7 +96,6 @@ public class MessageHub : MonoBehaviour
                 {
                     _showingMessage = true;
                     MessageBox.ShowMessage(next, MainMessageDismissed);
-                    _nextDialogIdx++;
                 }
             }
         }
@@ -108,6 +108,7 @@ public class MessageHub : MonoBehaviour
             case ResponseStatus.Correct:
                 _ignoreLevel = 0;
                 _lockoutTime = PhoneTime.Time + dialog.LockoutTime;
+                _nextDialogIdx++;
                 break;
             case ResponseStatus.Ignored:
                 _ignoreLevel++;
@@ -115,8 +116,8 @@ public class MessageHub : MonoBehaviour
                 _lockoutTime = PhoneTime.Time + IgnoredTimeDelay;
                 break;
             case ResponseStatus.Incorrect:
-                _ignoreLevel = 0;
                 _lockoutTime = PhoneTime.Time + WrongTimeDelay;
+                _wrongFeedback = true;
                 break;
         }
 
@@ -137,6 +138,7 @@ public class MessageHub : MonoBehaviour
                 _lockoutTime = PhoneTime.Time + dialog.LockoutTime;
                 break;
             case ResponseStatus.Incorrect:
+                _wrongFeedback = true;
                 _lockoutTime = PhoneTime.Time + dialog.LockoutTime;
                 break;
         }
@@ -153,9 +155,12 @@ public class MessageHub : MonoBehaviour
                 _lockoutTime = PhoneTime.Time + dialog.LockoutTime;
                 break;
             case ResponseStatus.Ignored:
+                _ignoreLevel++;
+                _ignoreDialogIdx = 0;
                 _lockoutTime = PhoneTime.Time + dialog.LockoutTime;
                 break;
             case ResponseStatus.Incorrect:
+                _wrongFeedback = true;
                 _lockoutTime = PhoneTime.Time + dialog.LockoutTime;
                 break;
         }
