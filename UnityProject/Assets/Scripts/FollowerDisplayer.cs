@@ -17,6 +17,6 @@ public class FollowerDisplayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Display.text = string.Format(_originalText, FollowersManager.Followers);
+        Display.text = string.Format(_originalText, FollowersManager.Followers).Replace("\\n", "\n");
     }
 }
