@@ -1143,7 +1143,8 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 25
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1412375661495455329, guid: d7f23d72f05cceb968b6fac0983c3251, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d7f23d72f05cceb968b6fac0983c3251, type: 3}
 --- !u!1 &1860375862
 GameObject:
@@ -1409,6 +1410,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7431230844557551977, guid: fa7b42064c82b5dcaad9ffccf9cfea94,
         type: 3}
+    - target: {fileID: 341866780916653699, guid: c7d6d0004061b1feaa15842bb050e8d3,
+        type: 3}
+      propertyPath: _initialChunkUnlock
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7d6d0004061b1feaa15842bb050e8d3, type: 3}
 --- !u!1001 &890676076090544529
