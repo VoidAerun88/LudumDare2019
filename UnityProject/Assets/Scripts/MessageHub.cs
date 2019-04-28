@@ -50,7 +50,11 @@ public class MessageHub : MonoBehaviour
         _ignoreLevel = 0;
     }
 
-    // Start is called before the first frame update
+    private void Start()
+    {
+        PhoneTime.Reset();
+    }
+    
     void Update()
     {
         if(_showingMessage || PhoneTime.Time <= _lockoutTime)
