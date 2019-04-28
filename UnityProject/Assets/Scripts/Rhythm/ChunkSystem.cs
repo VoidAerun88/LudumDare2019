@@ -11,7 +11,8 @@ public class ChunkSystem : MonoBehaviour
     private int _bpm = 80;
     [SerializeField]
     private List<Chunk> _serializedChunkPrefabs = new List<Chunk>();
-
+    [SerializeField]
+    private int _initialChunkUnlock = 4;
     private Dictionary<string, Chunk> _chunkPrefabs = new Dictionary<string, Chunk>();
     private Dictionary<string, Stack<Chunk>> _pooledChunk = new Dictionary<string, Stack<Chunk>>();
     private RectTransform _transform;
@@ -22,13 +23,9 @@ public class ChunkSystem : MonoBehaviour
     private void Awake()
     {
         _transform = GetComponent<RectTransform>();
-        foreach(var chunk in _serializedChunkPrefabs)
+        for (int i = 0; i < _initialChunkUnlock; i++)
         {
-            _chunkPrefabs.Add(System.Guid.NewGuid().ToString(), chunk);
-        }
-        foreach(var key in _chunkPrefabs.Keys)
-        {
-            _pooledChunk.Add(key, new Stack<Chunk>());
+            UnlockChunk(i);
         }
     }
 
@@ -38,6 +35,13 @@ public class ChunkSystem : MonoBehaviour
         {
             SpawnChunk();
         }
+    }
+
+    public void UnlockChunk(int index)
+    {
+        var key = System.Guid.NewGuid().ToString();
+        _chunkPrefabs.Add(key, _serializedChunkPrefabs[index]);
+        _pooledChunk.Add(key, new Stack<Chunk>());
     }
 
     private void SpawnChunk()
@@ -86,10 +90,7 @@ public class ChunkSystem : MonoBehaviour
 #if UNITY_EDITOR
     private void OnValidate()
     {
-        //if(_emptyBeatMax <= _emptyBeatMin)
-        //{
-        //    _emptyBeatMax++;
-        //}
+        _initialChunkUnlock = Mathf.Clamp(_initialChunkUnlock, 0, _serializedChunkPrefabs.Count);
     }
 #endif
 }
