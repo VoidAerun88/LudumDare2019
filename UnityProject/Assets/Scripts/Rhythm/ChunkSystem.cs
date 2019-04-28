@@ -5,11 +5,9 @@ using System.Linq;
 
 public class ChunkSystem : MonoBehaviour
 {
-    [SerializeField, Range(0, 10)]
-    private int _emptyBeatMin = 0;
-    [SerializeField, Range(0, 10)]
-    private int _emptyBeatMax = 0;
-    [SerializeField, Range(50, 150)]
+    [SerializeField]
+    private int _emptyBeatMin = -2;
+    [SerializeField]    
     private int _bpm = 80;
     [SerializeField]
     private List<Chunk> _serializedChunkPrefabs = new List<Chunk>();
@@ -53,7 +51,7 @@ public class ChunkSystem : MonoBehaviour
             0f
         );
 
-        _nextStartSequenceInBeat = chunk.BeatTargets.Count + Random.Range(_emptyBeatMin, _emptyBeatMax);
+        _nextStartSequenceInBeat = chunk.BeatTargets.Count + _emptyBeatMin;
         _nextStartSequenceInSeconds = _nextStartSequenceInBeat / (_bpm / 60);
         _lastChunkStartDate = Time.time;
     }
