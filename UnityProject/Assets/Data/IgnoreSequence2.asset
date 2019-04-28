@@ -15,7 +15,7 @@ MonoBehaviour:
   TotalTime: 0
   DialogList:
   - TimeCondition: 0
-    LockoutTime: 4
+    LockoutTime: 1
     Sender: 
     SenderMessage: hello...?
     CorrectResponse: Yeah, sorry, job called.
