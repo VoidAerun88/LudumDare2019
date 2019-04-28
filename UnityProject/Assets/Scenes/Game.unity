@@ -786,19 +786,19 @@ PrefabInstance:
     - target: {fileID: 341866780916653699, guid: c7d6d0004061b1feaa15842bb050e8d3,
         type: 3}
       propertyPath: _serializedChunkPrefabs.Array.size
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 341866780916653699, guid: c7d6d0004061b1feaa15842bb050e8d3,
         type: 3}
       propertyPath: _serializedChunkPrefabs.Array.data[1]
       value: 
-      objectReference: {fileID: 1610389954333376761, guid: a69f2d823b2b1ba2db4f872544e7a1e5,
+      objectReference: {fileID: 8824340046129374265, guid: 83b95cf225cde6c0e8d77b951495448e,
         type: 3}
     - target: {fileID: 341866780916653699, guid: c7d6d0004061b1feaa15842bb050e8d3,
         type: 3}
       propertyPath: _serializedChunkPrefabs.Array.data[2]
       value: 
-      objectReference: {fileID: 7431230844557551977, guid: fa7b42064c82b5dcaad9ffccf9cfea94,
+      objectReference: {fileID: 1610389954333376761, guid: a69f2d823b2b1ba2db4f872544e7a1e5,
         type: 3}
     - target: {fileID: 341866780916653699, guid: c7d6d0004061b1feaa15842bb050e8d3,
         type: 3}
@@ -810,7 +810,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _serializedChunkPrefabs.Array.data[3]
       value: 
-      objectReference: {fileID: 7038037170595832855, guid: 15e08ea7ddedf3a74ab7b02459e5d54f,
+      objectReference: {fileID: 7431230844557551977, guid: fa7b42064c82b5dcaad9ffccf9cfea94,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7d6d0004061b1feaa15842bb050e8d3, type: 3}
