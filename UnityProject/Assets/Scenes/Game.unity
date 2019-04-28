@@ -1750,7 +1750,7 @@ PrefabInstance:
     - target: {fileID: 341866780916653697, guid: c7d6d0004061b1feaa15842bb050e8d3,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 133.44998
+      value: 133.44995
       objectReference: {fileID: 0}
     - target: {fileID: 341866780916653697, guid: c7d6d0004061b1feaa15842bb050e8d3,
         type: 3}
@@ -1760,7 +1760,7 @@ PrefabInstance:
     - target: {fileID: 341866780916653699, guid: c7d6d0004061b1feaa15842bb050e8d3,
         type: 3}
       propertyPath: _serializedChunkPrefabs.Array.size
-      value: 4
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 341866780916653699, guid: c7d6d0004061b1feaa15842bb050e8d3,
         type: 3}
@@ -1789,8 +1789,38 @@ PrefabInstance:
     - target: {fileID: 341866780916653699, guid: c7d6d0004061b1feaa15842bb050e8d3,
         type: 3}
       propertyPath: _initialChunkUnlock
-      value: 4
+      value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 341866780916653699, guid: c7d6d0004061b1feaa15842bb050e8d3,
+        type: 3}
+      propertyPath: _serializedChunkPrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 8763435302123839718, guid: eb3dc242caca2cf98bdf791aad2b61c9,
+        type: 3}
+    - target: {fileID: 341866780916653699, guid: c7d6d0004061b1feaa15842bb050e8d3,
+        type: 3}
+      propertyPath: _serializedChunkPrefabs.Array.data[5]
+      value: 
+      objectReference: {fileID: 2351684479418880336, guid: e24ebc9526d0a9d3085cbda31d007b20,
+        type: 3}
+    - target: {fileID: 341866780916653699, guid: c7d6d0004061b1feaa15842bb050e8d3,
+        type: 3}
+      propertyPath: _serializedChunkPrefabs.Array.data[6]
+      value: 
+      objectReference: {fileID: 8562896451267183785, guid: d3d1e7766bffe72f6885f04a07143108,
+        type: 3}
+    - target: {fileID: 341866780916653699, guid: c7d6d0004061b1feaa15842bb050e8d3,
+        type: 3}
+      propertyPath: _serializedChunkPrefabs.Array.data[7]
+      value: 
+      objectReference: {fileID: 8181723819772394520, guid: 2ce158225ece5cdeeafdef98f3b7f0c5,
+        type: 3}
+    - target: {fileID: 341866780916653699, guid: c7d6d0004061b1feaa15842bb050e8d3,
+        type: 3}
+      propertyPath: _serializedChunkPrefabs.Array.data[8]
+      value: 
+      objectReference: {fileID: 2938646101851999399, guid: 8d60929b15c49ff6f9238fd8c69365a4,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7d6d0004061b1feaa15842bb050e8d3, type: 3}
 --- !u!1001 &890676076090544529
