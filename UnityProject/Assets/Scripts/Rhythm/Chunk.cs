@@ -6,6 +6,12 @@ public class Chunk : MonoBehaviour
 {
     public string Key;
     public List<BeatTarget> BeatTargets = new List<BeatTarget>();
+    [SerializeField]
+    private AudioClip _validAudio = null;
+    [SerializeField]
+    private AudioClip _invalidAudio = null;
+    [SerializeField]
+    private AudioSource _audio = null;
 
     private int _currentBeatIndex = 0;
     private int _validCount = 0;
@@ -57,6 +63,8 @@ public class Chunk : MonoBehaviour
             FollowersManager.AddFollowers(target.FollowerValue);
             _validCount++;
         }
+
+        _audio.PlayOneShot(target.IsValid ? _validAudio : _invalidAudio, 1f);
     }
 
     private void OnBeatTargetVisualDone(BeatTarget target)

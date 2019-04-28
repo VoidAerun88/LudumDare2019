@@ -1,0 +1,155 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6736743701590352229
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7035402891314988038, guid: 66f6d4ecc2470d245a6d485fc314bf9b,
+        type: 3}
+      propertyPath: m_Name
+      value: SecondVictim
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035402891314988038, guid: 66f6d4ecc2470d245a6d485fc314bf9b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108849767298322693, guid: 66f6d4ecc2470d245a6d485fc314bf9b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108849767298322693, guid: 66f6d4ecc2470d245a6d485fc314bf9b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108849767298322693, guid: 66f6d4ecc2470d245a6d485fc314bf9b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108849767298322693, guid: 66f6d4ecc2470d245a6d485fc314bf9b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108849767298322693, guid: 66f6d4ecc2470d245a6d485fc314bf9b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108849767298322693, guid: 66f6d4ecc2470d245a6d485fc314bf9b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108849767298322693, guid: 66f6d4ecc2470d245a6d485fc314bf9b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108849767298322693, guid: 66f6d4ecc2470d245a6d485fc314bf9b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108849767298322693, guid: 66f6d4ecc2470d245a6d485fc314bf9b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108849767298322693, guid: 66f6d4ecc2470d245a6d485fc314bf9b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108849767298322693, guid: 66f6d4ecc2470d245a6d485fc314bf9b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108849767298322693, guid: 66f6d4ecc2470d245a6d485fc314bf9b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108849767298322693, guid: 66f6d4ecc2470d245a6d485fc314bf9b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108849767298322693, guid: 66f6d4ecc2470d245a6d485fc314bf9b,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108849767298322693, guid: 66f6d4ecc2470d245a6d485fc314bf9b,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1543
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108849767298322693, guid: 66f6d4ecc2470d245a6d485fc314bf9b,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108849767298322693, guid: 66f6d4ecc2470d245a6d485fc314bf9b,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108849767298322693, guid: 66f6d4ecc2470d245a6d485fc314bf9b,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108849767298322693, guid: 66f6d4ecc2470d245a6d485fc314bf9b,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108849767298322693, guid: 66f6d4ecc2470d245a6d485fc314bf9b,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108849767298322693, guid: 66f6d4ecc2470d245a6d485fc314bf9b,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8399722853717601663, guid: 66f6d4ecc2470d245a6d485fc314bf9b,
+        type: 3}
+      propertyPath: m_text
+      value: '<b><size=120>BREAKING NEWS</size></b>
+
+
+        A serial killer kills a second victim, SuperSteevy, also followed by many
+        on InstaLifePlus'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8399722853717601663, guid: 66f6d4ecc2470d245a6d485fc314bf9b,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 92
+      objectReference: {fileID: 0}
+    - target: {fileID: 8399722853717601663, guid: 66f6d4ecc2470d245a6d485fc314bf9b,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8399722853717601663, guid: 66f6d4ecc2470d245a6d485fc314bf9b,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8399722853717601663, guid: 66f6d4ecc2470d245a6d485fc314bf9b,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 66f6d4ecc2470d245a6d485fc314bf9b, type: 3}

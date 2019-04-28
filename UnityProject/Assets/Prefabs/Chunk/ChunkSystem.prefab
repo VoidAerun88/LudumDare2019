@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -200, y: -100}
+  m_AnchoredPosition: {x: 0, y: 103.849976}
+  m_SizeDelta: {x: -200, y: -307.70004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &341866780916653699
 MonoBehaviour:
@@ -49,11 +49,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 789a95d3c89c92a0cb026695be92e4d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _emptyBeatMin: 0
-  _emptyBeatMax: 1
+  _emptyBeatMin: 1
   _bpm: 80
   _serializedChunkPrefabs:
-  - {fileID: 3667819489223169102, guid: b284c651993b3953f8d837b2cdb06d7a, type: 3}
+  - {fileID: 7038037170595832855, guid: 15e08ea7ddedf3a74ab7b02459e5d54f, type: 3}
+  - {fileID: 8824340046129374265, guid: 83b95cf225cde6c0e8d77b951495448e, type: 3}
+  - {fileID: 1610389954333376761, guid: a69f2d823b2b1ba2db4f872544e7a1e5, type: 3}
+  - {fileID: 7431230844557551977, guid: fa7b42064c82b5dcaad9ffccf9cfea94, type: 3}
+  _initialChunkUnlock: 4
 --- !u!82 &341866780916653698
 AudioSource:
   m_ObjectHideFlags: 0
@@ -64,11 +67,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 3b3292d872856d54bb7d0795ea8fd16f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

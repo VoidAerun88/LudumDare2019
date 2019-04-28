@@ -63,7 +63,6 @@ public class BeatTarget : MonoBehaviour
         if(!_isFinished && Elapsed >= _duration)
         {
             Finish();
-            _isFinished = true;
         }
 
         if(_animator.GetCurrentAnimatorStateInfo(0).IsName(AnimatorConstants.kDone))
@@ -104,5 +103,6 @@ public class BeatTarget : MonoBehaviour
     {
         OnDone?.Invoke(this);  
         _animator.SetTrigger(AnimatorConstants.kFinish);
+        _isFinished = true;
     }
 }
