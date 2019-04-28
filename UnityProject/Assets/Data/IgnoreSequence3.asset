@@ -15,13 +15,13 @@ MonoBehaviour:
   TotalTime: 0
   DialogList:
   - TimeCondition: 0
-    LockoutTime: 4
+    LockoutTime: 1
     Sender: 
     SenderMessage: Nice to be ignored...
     CorrectResponse: Sorry, there was a new trend I HAD to comment on.
     WrongResponses: []
   - TimeCondition: 0
-    LockoutTime: 4
+    LockoutTime: 1
     Sender: 
     SenderMessage: Wasn't that your last excuse?
     CorrectResponse: Online life is going fast, gotta keep up!
