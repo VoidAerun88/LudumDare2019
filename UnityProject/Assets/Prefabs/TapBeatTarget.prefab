@@ -4884,6 +4884,7 @@ MonoBehaviour:
   _particlesRadiusFactor: 3
   _maxScale: 4
   _animator: {fileID: 6885063458375913681}
+  _audio: {fileID: 0}
   Precision: 0.65
   FollowerValue: 1
 --- !u!114 &6514407982843713347
