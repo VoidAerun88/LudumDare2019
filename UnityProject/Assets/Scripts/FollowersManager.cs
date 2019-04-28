@@ -12,6 +12,6 @@ public static class FollowersManager
 
     public static void AddFollowers(int follower)
     {
-        Followers += follower;
+        Followers += (int)(follower * PhoneTime.Time);
     }
 }
