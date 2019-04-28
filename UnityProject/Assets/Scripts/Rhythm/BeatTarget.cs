@@ -17,11 +17,16 @@ public class BeatTarget : MonoBehaviour
     public event Action<BeatTarget> OnVisualDone;
 
     [SerializeField]
-    private Image _particles = null;
+    private Image _timingSprite = null;
     [SerializeField, Range(1, 10)]
     private float _particlesRadiusFactor = 1f;
     [SerializeField, Range(1, 10)]
     private float _maxScale = 1f;
+    [SerializeField]
+    private ParticleSystem _validParticles = null; 
+    [SerializeField]
+    private ParticleSystem _invalidParticles = null;
+
     [SerializeField]
     private Animator _animator = null;
 
@@ -44,7 +49,7 @@ public class BeatTarget : MonoBehaviour
             return;
         }
         
-        _particles.transform.localScale = Mathf.Min( _maxScale, ( Mathf.Max(0, _duration - Elapsed) * _particlesRadiusFactor + 1 )) * Vector2.one;
+        _timingSprite.transform.localScale = Mathf.Min( _maxScale, ( Mathf.Max(0, _duration - Elapsed) * _particlesRadiusFactor + 0.9f )) * Vector2.one;
         
         var startColor = Color.white;
 
@@ -58,7 +63,7 @@ public class BeatTarget : MonoBehaviour
         }
 
         startColor.a = Mathf.Lerp(0f, 1f, Elapsed / _duration);
-        _particles.color = startColor;
+        _timingSprite.color = startColor;
 
         if(!_isFinished && Elapsed >= _duration)
         {
@@ -69,6 +74,12 @@ public class BeatTarget : MonoBehaviour
         {
             OnVisualDone?.Invoke(this);
         }
+    }
+
+    private void OnEnable()
+    {
+        _validParticles.Stop();
+        _invalidParticles.Stop();
     }
 
     public void StartSequence(float duration)
@@ -95,7 +106,7 @@ public class BeatTarget : MonoBehaviour
         {
             _state = State.Invalid;
         }
-        
+
         Finish();
     }
 
@@ -103,6 +114,13 @@ public class BeatTarget : MonoBehaviour
     {
         OnDone?.Invoke(this);  
         _animator.SetTrigger(AnimatorConstants.kFinish);
+        if(_state == State.Valid)
+        {
+            _validParticles.Play();
+        } else
+        {
+            _invalidParticles.Play();
+        }
         _isFinished = true;
     }
 }
