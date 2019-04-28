@@ -6,7 +6,8 @@ using System;
 
 public class BeatTarget : MonoBehaviour
 {
-    private enum State {
+    private enum State
+    {
         None = 0,
         Valid,
         Invalid, 
@@ -27,20 +28,21 @@ public class BeatTarget : MonoBehaviour
     private State _state;
     private float _startDate = -1f;
     private float _duration = -1f;
+    
     public float Precision = 0.2f;
     public bool IsValid => _state == State.Valid;
     public int FollowerValue;
-    
+    public float Duration => _duration;
+    public float Elapsed => Time.time - _startDate;
+
     private void Update()
     {
         if(_startDate < 0)
         {
             return;
         }
-
-        var elapsed = (Time.time - _startDate);
         
-        _particles.transform.localScale = Mathf.Min( _maxScale, ( Mathf.Max(0, _duration - elapsed) * _particlesRadiusFactor + 1 )) * Vector2.one;
+        _particles.transform.localScale = Mathf.Min( _maxScale, ( Mathf.Max(0, _duration - Elapsed) * _particlesRadiusFactor + 1 )) * Vector2.one;
         
         var startColor = Color.white;
 
@@ -53,10 +55,10 @@ public class BeatTarget : MonoBehaviour
             startColor = Color.white;
         }
 
-        startColor.a = Mathf.Lerp(0f, 1f, elapsed / _duration);
+        startColor.a = Mathf.Lerp(0f, 1f, Elapsed / _duration);
         _particles.color = startColor;
 
-        if(elapsed >= _duration)
+        if(Elapsed >= _duration)
         {
             Finish();
         }
@@ -86,7 +88,8 @@ public class BeatTarget : MonoBehaviour
         if(timeLeft > 0 && timeLeft <= Precision)
         {
             _state = State.Valid;
-        } else {
+        } else
+        {
             _state = State.Invalid;
         }
         
