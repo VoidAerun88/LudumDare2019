@@ -80,8 +80,8 @@ public class SwipeComponent : MonoBehaviour
         if(delta.magnitude >= DragThreshold &&
            Vector2.Angle(delta, _swipeDirection) < DragAngleThreshold)
         {
-            _state = State.Valid;
             _target.BeatAction();
+            _state = State.Valid;
         }
     }
 

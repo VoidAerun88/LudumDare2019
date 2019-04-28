@@ -18,7 +18,7 @@ public class Chunk : MonoBehaviour
             beatTarget.OnDone += OnBeatTargetDone;
             beatTarget.OnVisualDone += OnBeatTargetVisualDone;
             BeatTargets.Add(beatTarget);
-        }    
+        }
     }
 
     private void OnDisable() {
