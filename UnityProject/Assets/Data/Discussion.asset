@@ -20,7 +20,8 @@ MonoBehaviour:
     SenderMessage: Hey you! It's been a while, how are you doing, darling?
     CorrectResponse: Hi Mom! yeah, my network is growing! I hope to get even more
       followers!
-    WrongResponses: []
+    WrongResponses:
+    - DO NOT DISTURB MODE IS ACTIVATED.
   - TimeCondition: 15
     LockoutTime: 2
     Sender: Mom
@@ -36,20 +37,23 @@ MonoBehaviour:
     SenderMessage: Your sister passed her exam yesterday, it's Lieutenant Silly now!
       Haha! Be nice to her when she calls you, okay?
     CorrectResponse: Really? Wow! I'll make an effort, I promise!
-    WrongResponses: []
+    WrongResponses:
+    - Reality? Wagon! I'll make an effervecence, Imothep!
   - TimeCondition: 15
     LockoutTime: 10
     Sender: Sis
     SenderMessage: Hey beautiful! Thanks for passing by yesterday! Will we see you
       next week-end?
     CorrectResponse: Maybe! Congrats again on the new Job!
-    WrongResponses: []
+    WrongResponses:
+    - I still can't believe you passed pre-school...
   - TimeCondition: 100
     LockoutTime: 2
     Sender: Mom
     SenderMessage: I heard about your friend that was attacked, are you okay?
     CorrectResponse: I'm in shock, who could have done something like this?
-    WrongResponses: []
+    WrongResponses:
+    - Jgdslkjdfkjfsdaghiaghilsushgd
   - TimeCondition: 100
     LockoutTime: 2
     Sender: Mom
@@ -69,7 +73,8 @@ MonoBehaviour:
     SenderMessage: I've been assigned to the case, I swear I'll do my best to find
       the guy who did it. It will not go unpunished.
     CorrectResponse: Thanks Sis, it means a lot.
-    WrongResponses: []
+    WrongResponses:
+    - So it's YOUR fault if she's dead!
   - TimeCondition: 180
     LockoutTime: 2
     Sender: Sis
@@ -94,7 +99,8 @@ MonoBehaviour:
     Sender: Sis
     SenderMessage: Is there vehement protesters? Rumors about ennemies?
     CorrectResponse: Not that I know of... It would help to know who it was...
-    WrongResponses: []
+    WrongResponses:
+    - Aliens did it, it's always the aliens!
   - TimeCondition: 180
     LockoutTime: 2
     Sender: Sis
@@ -114,7 +120,8 @@ MonoBehaviour:
     Sender: Sis
     SenderMessage: The name of the second victim is public, it's Super Steevy...
     CorrectResponse: I saw it in the news. I met him in a gala last month...
-    WrongResponses: []
+    WrongResponses:
+    - My psychic told I was better off with her as my only friend.
   - TimeCondition: 200
     LockoutTime: 2
     Sender: Sis
@@ -155,8 +162,9 @@ MonoBehaviour:
     LockoutTime: 2
     Sender: Sis
     SenderMessage: Go hide! I called my precinct, they're on the way!
-    CorrectResponse: k hurry
-    WrongResponses: []
+    CorrectResponse: hurry!
+    WrongResponses:
+    - Ooor... I could make tea.
   - TimeCondition: 250
     LockoutTime: 2
     Sender: Sis
