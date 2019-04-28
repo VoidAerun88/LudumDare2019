@@ -16,13 +16,16 @@ public class ChunkSystem : MonoBehaviour
     private Dictionary<string, Chunk> _chunkPrefabs = new Dictionary<string, Chunk>();
     private Dictionary<string, Stack<Chunk>> _pooledChunk = new Dictionary<string, Stack<Chunk>>();
     private RectTransform _transform;
+    private AudioSource _music;
     private int _nextStartSequenceInBeat = -1;
     private float _nextStartSequenceInSeconds = -1f;
     private float _lastChunkStartDate = 0f;
+    private float _timeFactor = .002f;
 
     private void Awake()
     {
         _transform = GetComponent<RectTransform>();
+        _music = GetComponent<AudioSource>();
         for (int i = 0; i < _initialChunkUnlock; i++)
         {
             UnlockChunk(i);
@@ -46,6 +49,10 @@ public class ChunkSystem : MonoBehaviour
 
     private void SpawnChunk()
     {
+        // todo test
+        //_music.pitch += _music.pitch * _timeFactor; 
+        //_bpm += Mathf.RoundToInt(_bpm * _timeFactor);
+
         var chunk = PopPool();
         var rectTransform = chunk.GetComponent<RectTransform>();
 
