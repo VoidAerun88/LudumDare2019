@@ -77,15 +77,10 @@ public class SwipeComponent : MonoBehaviour
         }
  
         var delta = _lastEvent - _firstEvent;
-        Debug.LogWarning("####################################");
-        Debug.LogWarning($"delta.magnitude : {delta.magnitude}");
-        Debug.LogWarning($"Vector2.Angle(delta, _swipeDirection) : {Vector2.Angle(delta, _swipeDirection)}");
-        Debug.LogWarning("####################################");
         if(delta.magnitude >= DragThreshold &&
            Vector2.Angle(delta, _swipeDirection) < DragAngleThreshold)
         {
             _state = State.Valid;
-            Debug.LogError("VICTORY");
             _target.BeatAction();
         }
     }
